@@ -1,0 +1,2 @@
+page{ background: #f4f4f8; }
+wx-view,wx-button{ display: block; overflow: initial; }

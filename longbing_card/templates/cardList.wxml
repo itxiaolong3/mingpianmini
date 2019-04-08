@@ -1,0 +1,87 @@
+<block wx:if='{{globalData.configInfo.config.allow_create == 1}}'>
+    <view style='height:100rpx;'></view>
+    <block wx:if='{{collectStatus == false}}'>
+        <view class='create-card-title'>暂无名片请创建</view>
+    </block>
+    <block wx:if='{{collectionList.list.length > 0}}'>
+        <view bindtap='toJump'
+              class='card-toAdd-sec2 {{(cardToAddStatus == true?"normal":"")}}  {{(nofont == true?"nofont":"")}} tc fix'
+              data-status='toAddCard' style='bottom:{{(globalData.isIphoneX?128:60)}}rpx'>
+            <image class='rel add-img' src='/longbing_card/resource/images/icon-cardList.png'></image>
+            <view class='abs create-text tl'>
+                <text class='ellipsis' style='width:350rpx;display:inline-block;'>
+                    {{globalData.configInfo.config.create_text}}
+                </text>
+                <text class='fr'>立即创建</text>
+            </view>
+        </view>
+    </block>
+    <block wx:if='{{collectStatus == false}}'>
+        <view bindtap='toJump' class='card-toAdd-sec tc big-toAdd-card br-15' data-status='toAddCard'><i
+                class='iconfont icon-open'></i>
+            <view class='title'>{{globalData.configInfo.config.create_text}}</view>
+        </view>
+    </block>
+</block>
+<view class='card-toSearch-sec fix'>
+    <block wx:if='{{toSearchCard == true}}'><input bindblur='toSearchCardBlur' bindconfirm='toSearchCardConfirm'
+                                                   bindinput='toSearchCard' class='br-10' focus='{{true}}'
+                                                   placeholder='搜索姓名' type='text' value='{{cardSearchKey}}'></input>
+    </block>
+    <block wx:else>
+        <view bindtap='toJump' class='input tc' data-status='toSearchCardFocus'><i class='iconfont icon-sousuo'></i>{{(cardSearchKey?cardSearchKey:"搜索姓名")}}
+        </view>
+    </block>
+</view>
+<view style='height:{{(globalData.configInfo.config.allow_create == 0?100:0)}}rpx'></view>
+<block wx:if='{{collectionList.list.length > 0}}'>
+    <view class='card-list-sec'>
+        <block wx:for='{{collectionList.list}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+            <view bindtap='toJump' class='child rel' data-index='{{index}}' data-status='toCardIndex'>
+                <view class='title ellipsis'> {{item.create_time2}}
+                    <block wx:if='{{!(item.from_uid)}}'>来自{{item.shareBy}}</block>
+                    <block wx:else>
+                        <block wx:if='{{ (item.from_uid == userid || item.from_uid == 0) }}'>来自搜索</block>
+                        <block wx:else>
+                            <block wx:if='{{ (item.handover_id && item.handover_name) }}'>
+                                来自{{item.handover_name}}的工作交接
+                            </block>
+                            <block wx:else>
+                                <block wx:if='{{item.shareBy}}'> 来自{{item.shareBy}}
+                                    <block wx:if='{{ (item.shareBy && !(item.openGId)) }}'>的分享</block>
+                                    <block wx:if='{{ (item.shareBy && item.openGId) }}'>分享的群
+                                        <open-data openGid='{{item.openGId}}' type='groupName'></open-data>
+                                    </block>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                </view>
+                <view class='card br-15 clearfix'>
+                    <view class='content fl rel'>
+                        <!--<view class='company ellipsis'>{{ (item.userInfo.myCompany.name || "公司名称") }}</view>-->
+                        <view class='company ellipsis'>{{ (item.userInfo.company || "公司名称") }}</view>
+                        <view class='company ellipsis'>{{ (item.userInfo.company2 || "") }}</view>
+                        <view class='name ellipsis'>{{ ( (item.userInfo.name || item.info.nickName) || "姓名") }}</view>
+                        <!--<view class='job ellipsis'>{{ (item.userInfo.job_name || "职称") }}</view>-->
+                        <view class='job ellipsis'>{{ (item.userInfo.job || "职称") }}</view>
+                        <view class='contact ellipsis'>{{ (item.userInfo.phone || "电话") }}</view>
+                        <view class='contact ellipsis'>{{ (item.userInfo.email || "邮箱") }}</view>
+                        <view class='desc ellipsis'>No.{{index * 1 + 1}}</view>
+                    </view>
+                    <view class='user-img fr rel'>
+                        <image class='br-13 fr' lazyLoad='{{true}}' mode='aspectFill'
+                               src='{{ ( (item.userInfo.avatar || item.info.avatarUrl)  || globalData.defaultUserImg) }}'></image>
+                        <block wx:if='{{item.message > 0}}'><em class='tc {{(item.message > 100?"dotbig":"dot")}}'>
+                            {{item.message}} </em></block>
+                    </view>
+                </view>
+                <view class='more abs'><em class='circle'></em><em class='circle big-dot'></em><em class='circle'></em>
+                </view>
+            </view>
+        </block>
+        <block wx:if='{{show}}'>
+            <include src='/longbing_card/templates/loading.wxml'></include>
+        </block>
+    </view>
+</block>

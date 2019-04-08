@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "名片列表",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "htmltowxml": "/longbing_card/templates/html2wxml/html2wxml",
+    "sticky": "/longbing_card/templates/sticky/sticky",
+    "openSetting": "/longbing_card/templates/openSetting/openSetting"
+  }
+}

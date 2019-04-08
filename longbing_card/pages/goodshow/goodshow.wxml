@@ -1,0 +1,13 @@
+<view class='main'>
+  <view class='title'>标题</view>
+  <view class='time'>发布时间：2018-01-11</view>
+  <view class='conimgs'>
+    <view class='content'>内容非法违法我发给我我刚刚果然爱过我二哥玩儿问过我</view>
+    <view class='imgs'>
+      <view><image src='https://boshen.possji.cn/attachment/images/2/2019/03/T8w8Yo7L7Yd7K2oFf4K18fFFtzd8Z2.jpg'></image></view>
+      <view><image src='https://boshen.possji.cn/attachment/images/2/2019/03/T8w8Yo7L7Yd7K2oFf4K18fFFtzd8Z2.jpg'></image></view>
+      <view><image src='https://boshen.possji.cn/attachment/images/2/2019/03/T8w8Yo7L7Yd7K2oFf4K18fFFtzd8Z2.jpg'></image></view>
+    </view>
+  </view>
+  
+</view>

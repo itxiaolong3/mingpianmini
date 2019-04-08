@@ -1,0 +1,26 @@
+page{ background: #f4f4f8; }
+wx-view,wx-button{ display: block; overflow: initial; }
+.animatoins{ width:94%; height:118rpx; background:#fefefd; display: flex; justify-content: space-between; align-items: center; position: fixed; top:10rpx; left: 3%; z-index: 9999999; color:#000; font-size: 28rpx; transition: transform 1s; transform:translateY(-140rpx); box-shadow: 0 3rpx 12rpx rgba(0, 0, 0, .1); }
+.animatoins wx-text{ width: 500rpx; position: relative; top: -5rpx; }
+.aa{ transform:translateY(0rpx); }
+.animatoins_top{ display: flex; flex-direction: column; padding:10rpx 0 0 0; flex:1; }
+.animatoins_content{ color: #666; font-size: 22rpx; }
+.animatoins wx-image{ width:64rpx; height:64rpx; padding:0rpx 10rpx 0rpx 30rpx; margin:0rpx; }
+.animatoins_top wx-em{ top: 27rpx; right: 5%; }
+.scroll-view-navTop-sec{ height: 90rpx; line-height: 90rpx; }
+.scroll-item-de{ height: 80rpx; line-height: 80rpx; }
+wx-button[type=hasbg]{ color:#e6e6e6; height: 54rpx; line-height: 54rpx; font-size: 26rpx; border:1px solid #e6e6e6; background-color:#f8f8f8; border-radius: 0rpx; }
+wx-button[type=hasbg][plain] { color:#e6e6e6; height: 54rpx; line-height: 54rpx; font-size: 26rpx; border:1px solid #e6e6e6; background-color:#f8f8f8; border-radius: 0rpx; }
+wx-button.nobor::after{ border: none; }
+.btn-hover{ opacity: 0.8; }
+.music-sec{ width: 60rpx; height: 60rpx; line-height: 60rpx; display: block; background: #000; background: rgba(0,0,0,0.5); filter:Alpha(opacity=50); top: 50rpx; left: 5%; color: white; z-index: 99999999; }
+.music-sec wx-em{ width: 50rpx; height: 1rpx; background: white; transform: rotate(-45deg); top: 30rpx; left: 5rpx; }
+.music-sec wx-i{ font-size: 30rpx; top: 2rpx; left: 15rpx; }
+.music-transform{ animation: rotateArround  linear 4s infinite; -webkit-animation: rotateArround linear 4s infinite; }
+@keyframes rotateArround { from {transform: rotateZ(0deg);}
+to {transform: rotateZ(360deg);}
+}@-webkit-keyframes rotateArround { from {-webkit-transform: rotate(0deg); }
+to {-webkit-transform: rotate(360deg);}
+}.f-icontext{font-size: 22rpx;}
+.f-paragraph{font-size: 28rpx;}
+.c-paragraph-sm{color:#969696;}

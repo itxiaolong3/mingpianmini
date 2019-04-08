@@ -1,0 +1,7 @@
+page { background: #f4f4f8; }
+.common-footer .tab-view{ width: 33%; }
+.setTab-box-view{ width: 100%; padding: 0rpx; }
+.swiper-tab-list{ color: #333; }
+.swiper-tab-curr { margin: 0rpx auto; text-align: center; }
+.swiper-tab-curr .swiper-tab-curr-list{ padding: 0rpx 26rpx; width: auto; display: inline-block; margin-left:65rpx; }
+.swiper-tab-curr .swiper-tab-curr-list:nth-child(1){ margin-left: 0rpx; }

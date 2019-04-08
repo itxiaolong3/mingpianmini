@@ -1,0 +1,15 @@
+<view class='main'>
+    <view class='txmoney'>
+      <text>提现金额:</text>
+      <input placeholder='提现金额不低于100元' bindinput='moneyinput' placeholder-style='font-size:12px;'></input>
+    </view>
+    <view class='zfbname'>
+      <text>支付宝账号:</text>
+      <input placeholder='请输入支付宝账号' bindinput='zfbnuminput' placeholder-style='font-size:12px;'></input>
+    </view>
+    <view class='name'>
+      <text>姓名:</text>
+      <input placeholder='请输入姓名' bindinput='zfbnameinput' placeholder-style='font-size:12px;'></input>
+    </view>
+    <view class='posttx' catchtap='dopost'>提交申请</view>
+</view>

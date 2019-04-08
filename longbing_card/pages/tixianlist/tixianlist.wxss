@@ -1,0 +1,12 @@
+/* longbing_card/pages/tixianlist/tixianlist.wxss */
+.lis{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: white;
+  padding: 5px 15px;
+  margin-top: 2px;
+  font-size: 15px;
+  color: #4D4D4D;
+}

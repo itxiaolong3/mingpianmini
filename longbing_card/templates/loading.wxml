@@ -1,0 +1,1 @@
+<view class='page'><block wx:if='{{loading}}'><view class='loadmore'><view class='loading'></view><view class='loadmore_tips'>正在加载</view></view></block><block wx:else><block wx:if='{{!(more)}}'><view class='loadmore loadmore_line'><view class='loadmore_tips loadmore_tips_in-line'>没有更多数据了</view></view></block><block wx:if='{{more}}'><view></view></block></block></view>

@@ -1,0 +1,3 @@
+page{ background: #f4f4f4; }
+wx-view,wx-button{ display: block; overflow: initial; }
+.staff-editInfo-common .imgs .upload-staff-images, .staff-editInfo-common .imgs .imgs-icon{ width: 200rpx; height: 200rpx; }

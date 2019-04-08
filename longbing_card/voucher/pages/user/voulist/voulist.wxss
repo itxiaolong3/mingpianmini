@@ -1,0 +1,3 @@
+page { background: #f0f0f5; }
+wx-view,wx-button{ display: block; overflow: initial; }
+.setTab-box-view{ position: fixed; }

@@ -1,0 +1,3 @@
+page{ background: #f4f4f8; }
+wx-ec-canvas { width: 100%; height: 100%; }
+.spread-product-sec .child:nth-last-child(1) { padding-bottom:30rpx; }

@@ -1,0 +1,133 @@
+<import src='../../templates/copyright/copyright.wxml'></import>
+<view class='staff-mine-sec'>
+    <view class='rel user-sec br-10' style='height:auto;padding-bottom:0rpx;'>
+        <image class='abs circle' mode='aspectFill'
+               src='{{(cardIndexData.info.avatar?cardIndexData.info.avatar:globalData.defaultUserImg)}}'></image>
+        <view class='flex'>
+            <view class='flex100-5 ellipsis'>
+                <view class='name'>{{(cardIndexData.info.name?cardIndexData.info.name:"姓名")}}</view>
+                <!--<view class='job'>{{(cardIndexData.info.job_name?cardIndexData.info.job_name:"职称")}}</view>-->
+                <view class='job'>{{(cardIndexData.info.job?cardIndexData.info.job:"职称")}}</view>
+            </view>
+            <view bindtap='toJump' class='flex100-5 ellipsis tr' data-status='toEdit'><i
+                    class='iconfont icon-right2 fr'></i>
+                <view class='edit tc fr'><i class='iconfont icon-xiazai43'></i>编辑</view>
+            </view>
+        </view>
+        <view bindtap='toJump' class='mine-ewm' data-status='toEwm'> 我的推广码
+            <view class='fr'><i class='iconfont icon-erweima'></i></view>
+        </view>
+    </view>
+    <form bindsubmit='formSubmit' class='company-nav-sec tc clearfix' reportSubmit='true'>
+        <button class='fl' formType='submit' hoverClass='none' openType='share'><i class='iconfont icon-zhuanfa'
+                                                                                   style='color:#21bf34;'></i>
+            <view class='title'>发名片</view>
+        </button>
+        <button class='fl' data-status='toCardIndex' formType='submit' hoverClass='none'><i class='iconfont icon-chakan'
+                                                                                            style='color:#feba29;'></i>
+            <view class='title'>名片预览</view>
+        </button>
+        <button class='fl' data-status='toAddPage' data-url='/longbing_card/staffs/pages/spread/news/news?status=news'
+                formType='submit' hoverClass='none'><i class='iconfont icon-wenzhang' style='color:#67afea;'></i>
+            <view class='title'>发布动态</view>
+        </button>
+        <button class='fl' data-status='toPoster' data-url='/longbing_card/users/pages/uCenter/poster/list/list'
+                formType='submit' hoverClass='none'><i class='iconfont icon-tupian1' style='color:#fe9987;'></i>
+            <view class='title'>励志海报</view>
+        </button>
+    </form>
+</view>
+<form bindsubmit='formSubmit' class='staff-mine-list' reportSubmit='true'>
+    <button bindtap='toJump' class='child' data-status='toChat' formType='submit' hoverClass='none'
+            style='height:104rpx;'>
+        <view class='text-7 tl'><em class='circle tc' style='background:#65aeec;'><i
+                class='iconfont icon-xiaoxi'></i></em>
+            <text>私信我的</text>
+        </view>
+        <view class='text-3 tr rel'>
+            <block wx:if='{{notRead}}'><em class='dotbig' style='top:10rpx;right:35rpx;'>{{notRead}}</em></block>
+            <i class='iconfont icon-right2 rel'></i></view>
+    </button>
+    <button class='child' data-status='toAddPage' data-url='/longbing_card/pages/myteam/myteam'
+            formType='submit' hoverClass='none' style='height:104rpx;'>
+        <view class='text-7 tl'><em class='circle tc' style='background:#E3E817;'><i
+                class='iconfont icon-shichangdongtai'></i></em>
+            <text>分销管理</text>
+        </view>
+        <view class='text-3 tr rel'><i class='iconfont icon-right2 rel'></i></view>
+    </button>
+    <button class='child' data-status='toAddPage' data-url='/longbing_card/pages/des/des'
+            formType='submit' hoverClass='none' style='height:104rpx;'>
+        <view class='text-7 tl'><em class='circle tc' style='background:#E3E817;'><i class='iconfont icon-wenzhang' style='color:#67afea;'></i></em>
+            <text>使用手册</text>
+        </view>
+        <view class='text-3 tr rel'><i class='iconfont icon-right2 rel'></i></view>
+    </button>
+    <button class='child' data-status='toAddPage' data-url='/longbing_card/staffs/pages/spread/news/news?status=news'
+            formType='submit' hoverClass='none' style='height:104rpx;'>
+        <view class='text-7 tl'><em class='circle tc' style='background:#fe9987;'><i
+                class='iconfont icon-shichangdongtai'></i></em>
+            <text>发布动态</text>
+        </view>
+        <view class='text-3 tr rel'><i class='iconfont icon-right2 rel'></i></view>
+    </button>
+    <button class='child' data-status='toAddPage' data-url='/longbing_card/staffs/pages/spread/product/product'
+            formType='submit' hoverClass='none' style='height:104rpx;'>
+        <view class='text-7 tl'><em class='circle tc' style='background:#6c83f4;'><i
+                class='iconfont icon-chanpinfangxiang'></i></em>
+            <text>我的商城</text>
+        </view>
+        <view class='text-3 tr rel'><i class='iconfont icon-right2 rel'></i></view>
+    </button>
+    <block wx:if='{{tmp_showPrice == true}}'>
+        <button class='child' data-status='toVoucher' data-url='/longbing_card/voucher/pages/staff/myearning/myearning'
+                formType='submit' hoverClass='none' style='height:104rpx;'>
+            <view class='text-7 tl'><em class='circle tc' style='background:#feba29;'><i class='iconfont icon-qian'></i></em>
+                <text>我的收入</text>
+            </view>
+            <view class='text-3 tr rel'><i class='iconfont icon-right2 rel'></i></view>
+        </button>
+    </block>
+    <block wx:if='{{tmp_showPrice == true}}'>
+        <button class='child' data-status='toVoucher' data-url='/longbing_card/voucher/pages/staff/voulist/voulist'
+                formType='submit' hoverClass='none' style='height:104rpx;'>
+            <view class='text-7 tl'><em class='circle tc' style='background:#ff3630;'><i
+                    class='iconfont icon-hongbao'></i></em>
+                <text>我送出的福包</text>
+            </view>
+            <view class='text-3 tr rel'><i class='iconfont icon-right2 rel'></i></view>
+        </button>
+    </block>
+    <button class='child' formType='submit' hoverClass='none' style='height:104rpx;'>
+        <view class='text-7 tl'><em class='circle tc' style='background:#21bf34;'><i
+                class='iconfont icon-xiaoxi'></i></em>
+            <text>剩余服务通知数量</text>
+        </view>
+        <view class='text-3 tr rel'>
+            <block wx:if='{{noticeNum}}'><em class='dotbig' style='top:10rpx;right:35rpx;'>{{noticeNum}}</em></block>
+            <i class='iconfont icon-right2 rel'></i></view>
+    </button>
+</form>
+<view class='staff-mine-list hide'>
+    <view bindtap='toJump' class='child' data-status='toCourse'>
+        <view class='text-7'><em class='circle tc' style='background:#ff6b00;'><i
+                class='iconfont icon-iconxuexisel'></i></em>
+            <text>使用教程</text>
+        </view>
+        <view class='text-3 tr'><i class='iconfont icon-right2'></i></view>
+    </view>
+    <view bindtap='toJump' class='child' data-status='toOpinion'>
+        <view class='text-7'><em class='circle tc' style='background:#fe9987;'><i
+                class='iconfont icon-xiazai43'></i></em>
+            <text>意见反馈</text>
+        </view>
+        <view class='text-3 tr'><i class='iconfont icon-right2'></i></view>
+    </view>
+</view>
+<template is='copyright' data='{{globalData:globalData}}'></template>
+<form bindsubmit='formSubmit' class='fixed-right-sec fixed-shop-right-sec fix' reportSubmit='true'
+      style='top:auto;bottom:50rpx;'>
+    <button class='circle tc rel' data-status='toHome' formType='submit' hoverClass='none'><i
+            class='abs iconfont icon-shouye'></i></button>
+</form>
+<view class='{{(globalData.isIphoneX?"isIphoneX":"")}}'></view>

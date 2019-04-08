@@ -1,0 +1,60 @@
+
+.topimg{
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  width: 100%;
+  height: 30%;
+}
+.topimg image{
+  width: 280px;
+  height: 180px;
+}
+.priceshow{
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+  height: 35px;
+  padding: 5px;
+  justify-content: space-between;
+  line-height: 35px;
+  font-size: 15px;
+  color: #6F6F6F;
+}
+.wxpay{
+  display: flex;
+  background-color: white;
+  padding: 5px;
+  height: 35px;
+  line-height: 35px;
+  border-top: 1px #12829635 solid;
+}
+.radio-group{
+  display: flex;
+   justify-content: space-between;
+}
+.wxpaytype{
+  margin-left: 15px;
+}
+.yqcode{
+  margin-left: 80px;
+}
+.codeinput{
+  border: 1px #51C332 solid;
+  font-size: 15px;
+  padding: 10px 5px;
+  width: 80%;
+  margin: 10px 5px;
+  border-radius: 5px;
+ 
+}
+.topay{
+  margin-top: 15px;
+  background-color: #51C332;
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  text-align: center;
+}

@@ -1,0 +1,84 @@
+.top{
+  height:180px;
+  background-color: #FF4544
+}
+.userinfos{
+  border-bottom: 1px #F0F0F0 solid;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: white;
+}
+.toupdate{
+  padding: 2px 8px;
+  border: 1px white solid;
+  color: white;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+.levelinfo{
+  margin-left: 10px;
+  font-size: 15px;
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nickname{
+  margin-bottom: 10px;
+}
+.imgs{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.tixianinfo{
+  display: flex;
+  color: white;
+  height: 45%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.txright{
+  border: 1px #F0F0F0 solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.txleft text{
+  margin-top: 5px;
+}
+.mid{
+  background-color: white;
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+}
+.mid1,.mid2,.mid3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  width: 30%;
+  height: 80px;
+}
+.mid1,.mid2{
+  border-right: 1px #C3C3C3 solid;
+  border-buttom: 1px #C3C3C3 solid;
+  padding: 5px;
+}
+.mid3{
+   border-buttom: 1px #C3C3C3 solid;
+  padding: 5px;
+}
+.mid1 image,.mid2 image,.mid3 image{
+ margin: 0 auto;
+  width: 32px;
+  height: 32px;
+}
+.mid1 text,.mid2 text,.mid3 text{
+ margin: 5px auto;
+ font-size: 15px;
+}

@@ -1,0 +1,38 @@
+<view class='member'>
+   会员订单
+</view>
+   <view class="list" wx:for="{{alldata['oneteam']}}">
+        <view class="list-left">
+            <view>
+                <image src='{{item.headerimg}}'></image>
+            </view> 
+        </view>
+        <view class="list-con">
+            <view>{{item.nickname}}</view>
+            <view>{{item.addtime}}</view>
+        </view>
+        <view class="list-min">
+            {{item.payprice}}元
+        </view>
+        <!-- <view class="list-right">
+            <image src='../../resource/icon/more.png'></image>
+        </view> -->
+  </view>
+   <view class="list" wx:for="{{alldata['twoteam']}}">
+         <view class="list-left">
+            <view>
+                <image src='{{item.headerimg}}'></image>
+            </view> 
+        </view>
+        <view class="list-con">
+            <view>{{item.nickname}}</view>
+            <view>{{item.addtime}}</view>
+        </view>
+        <view class="list-min">
+            {{item.payprice}}元
+        </view>
+        <!-- <view class="list-right">
+            <image src='../../resource/icon/more.png'></image>
+        </view> -->
+  </view>
+  

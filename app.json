@@ -1,0 +1,151 @@
+{
+  "subPackages": [
+    {
+      "root": "longbing_card/users/",
+      "pages": [
+        "pages/card/share/share",
+        "pages/shop/list/list",
+        "pages/shop/navList/navList",
+        "pages/shop/search/search",
+        "pages/shop/share/share",
+        "pages/shop/collageShare/collageShare",
+        "pages/shop/car/carIndex/carIndex",
+        "pages/shop/car/toOrder/toOrder",
+        "pages/shop/moreCollage/moreCollage",
+        "pages/shop/releaseCollage/releaseCollage",
+        "pages/uCenter/address/addressList/addressList",
+        "pages/uCenter/address/editAddress/editAddress",
+        "pages/uCenter/order/orderList/orderList",
+        "pages/uCenter/order/collageList/collageList",
+        "pages/uCenter/order/orderDetail/orderDetail",
+        "pages/uCenter/poster/list/list",
+        "pages/uCenter/poster/share/share",
+        "pages/uCenter/poster/upload/upload",
+        "pages/uCenter/index",
+        "pages/news/detail/detail",
+        "pages/company/list/list",
+        "pages/company/detail/detail",
+        "pages/company/contact/contact"
+      ]
+    },
+    {
+      "root": "longbing_card/staffs/",
+      "pages": [
+        "pages/spread/spread/spread",
+        "pages/spread/detail/detail",
+        "pages/spread/news/news",
+        "pages/spread/product/product",
+        "pages/spread/news/addNews/addNews",
+        "pages/spread/code/code",
+        "pages/custom/tag/tag",
+        "pages/custom/editInfo/editInfo",
+        "pages/custom/detail/detail",
+        "pages/mine/upload/upload",
+        "pages/mine/editInfo/editInfo",
+        "pages/mytag/tag/tag",
+        "pages/mytag/custom/custom",
+        "pages/group/list/list",
+        "pages/group/add/add",
+        "pages/group/send/send"
+      ]
+    },
+    {
+      "root": "longbing_card/boss/",
+      "pages": [
+        "pages/index/index",
+        "pages/client/list/list",
+        "pages/staff/detail/detail"
+      ]
+    },
+    {
+      "root": "longbing_card/voucher/",
+      "pages": [
+        "pages/user/voulist/voulist",
+        "pages/user/earning/earning",
+        "pages/user/myearning/myearning",
+        "pages/user/commission/commission",
+        "pages/user/distribution/distribution",
+        "pages/user/withlist/withlist",
+        "pages/user/withdraw/withdraw",
+        "pages/staff/voulist/voulist",
+        "pages/staff/exchange/exchange",
+        "pages/staff/myearning/myearning"
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "entryPagePath": "longbing_card/pages/index/index",
+  "pages": [
+    "longbing_card/pages/index/index",
+    "longbing_card/chat/staffChat/staffChat",
+    "longbing_card/chat/userChat/userChat",
+    "longbing_card/staff/radar/radar",
+    "longbing_card/staff/message/message",
+    "longbing_card/staff/spread/spread",
+    "longbing_card/staff/custom/custom",
+    "longbing_card/staff/mine/mine",
+    "longbing_card/pages/voucher/voucher",
+    "longbing_card/pages/shop/detail/detail",
+    "longbing_card/common/transtion/transtion",
+    "longbing_card/common/webview/webview",
+    "longbing_card/pages/mypage/vippay",
+    "longbing_card/pages/myteam/myteam",
+    "longbing_card/pages/tixianlist/tixianlist",
+    "longbing_card/pages/tixian/tixian",
+    "longbing_card/pages/teamcount/teamcount",
+    "longbing_card/pages/viporder/viporder",
+    "longbing_card/pages/des/des",
+    "longbing_card/pages/goodshow/goodshow"
+  ],
+  "networkTimeout": {
+    "request": 15000,
+    "downloadFile": 15000
+  },
+  "tabBar": {
+    "color": "#5d6268",
+    "selectedColor": "#e93636",
+    "borderStyle": "white",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "longbing_card/staff/radar/radar",
+        "text": "雷达",
+        "iconPath": "/longbing_card/resource/icon/icon-radar.png",
+        "selectedIconPath": "/longbing_card/resource/icon/icon-radar-cur.png"
+      },
+      {
+        "pagePath": "longbing_card/staff/message/message",
+        "text": "消息",
+        "iconPath": "/longbing_card/resource/icon/icon-message.png",
+        "selectedIconPath": "/longbing_card/resource/icon/icon-message-cur.png"
+      },
+      {
+        "pagePath": "longbing_card/staff/custom/custom",
+        "text": "客户",
+        "iconPath": "/longbing_card/resource/icon/icon-custom.png",
+        "selectedIconPath": "/longbing_card/resource/icon/icon-custom-cur.png"
+      },
+      {
+        "pagePath": "longbing_card/staff/mine/mine",
+        "text": "我的",
+        "iconPath": "/longbing_card/resource/icon/icon-mine.png",
+        "selectedIconPath": "/longbing_card/resource/icon/icon-mine-cur.png"
+      }
+    ]
+  },
+  "managedScriptDeveloper": "vt3650",
+  "navigateToMiniProgramAppIdList": [
+    "wx477edc8a75d65908"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": true
+  }
+}

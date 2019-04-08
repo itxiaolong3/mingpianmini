@@ -1,0 +1,40 @@
+<view class='main'>
+  <view class='top'>
+    <view class='userinfos'>
+      <view class='headerimg'>
+      <image src="{{userinfos['avatarUrl']}}" class='imgs'></image>
+      </view>
+      <view class='levelinfo'>
+        <text class='nickname'>{{userinfos['nickName']}}</text>
+        <text wx:if="{{userinfos['level']==0}}">普通用户</text>
+        <text wx:elif="{{userinfos['level']==1}}">VIP会员
+        {{userinfos.leveltype==1?'黄金代理':userinfos.leveltype==2?'铂金代理':userinfos.leveltype==3?'钻石代理':''}}
+        </text>
+      </view>
+       <text wx:if="{{userinfos['level']==0}}" catchtap='toupdate' class='toupdate'>去升级</text>
+    </view>
+    <view class='tixianinfo'>
+      <view class='txleft'>
+        <view>可提现佣金</view>
+        <text>{{userinfos['allmoney']}}元</text>
+      </view>
+      <view class='txright'>
+      <text bindtap='gototixian'>提现</text>
+      </view>
+    </view>
+  </view>
+  <view class='mid'>
+    <view class='mid1' bindtap='teamcount'>
+      <image src='../../resource/icon/myteam.png'></image>
+      <text>团队统计</text>
+    </view>
+    <view class='mid2' bindtap='viporder'>
+    <image src='../../resource/icon/myorder.png'></image>
+      <text>会员订单</text>
+    </view>
+    <view class='mid3' bindtap='tixianlist'>
+    <image src='../../resource/icon/tixian.png'></image>
+      <text>提现明细</text>
+    </view>
+  </view>
+</view>

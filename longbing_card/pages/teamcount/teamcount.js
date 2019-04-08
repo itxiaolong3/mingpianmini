@@ -1,0 +1,98 @@
+var _index = require("../../resource/apis/index.js");
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    number: '1000',
+    ischoose: 1,
+    second: '500',
+    time: '2019-02-01',
+    rank: '普通会员',
+    name: '昵称',
+    alldata:[]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+  oneteam:function(){
+    this.setData({
+      ischoose:1
+    })
+  },
+  twoteam: function () {
+    this.setData({
+      ischoose: 0
+    })
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    let uid = wx.getStorageSync("userid");
+    let parmdata = {
+      uid: uid
+    }
+    _index.baseModel.GetTeam(parmdata).then((e) => {
+      if (e.errno == 0) {
+        this.setData({
+          alldata:e.data
+        })
+        console.log(e,'团队数据')
+      } else {
+        wx.showToast({
+          title: e.message,
+          image: '../../resource/icon/fail.png',
+          duration: 1500
+        })
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

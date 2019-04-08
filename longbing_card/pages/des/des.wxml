@@ -1,0 +1,2 @@
+<!--longbing_card/pages/des/des.wxml-->
+<rich-text nodes="{{userbook}}" class='main'></rich-text>

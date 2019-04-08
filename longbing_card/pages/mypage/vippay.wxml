@@ -1,0 +1,28 @@
+<!--longbing_card/pages/mypage/vippay.wxml-->
+<view class='main'>
+  <view class='topimg'><image src='../../resource/images/yearka.png'></image></view>
+  <view class='priceshow'>
+  <text style='margin-left:15px;'>价格：</text>
+  <text style='margin-right:15px;'>￥{{yearpice}}元</text>
+  </view>
+  <view class='wxpay'>
+    <radio-group class="radio-group" bindchange="radioChange">
+    <view class="wxpaytype">
+     <label class="radio">
+        微信支付
+        <radio value="1" checked="{{iswxpay}}" />
+      </label>
+      </view>
+     <view class='yqcode'>
+      <label class="radio">
+        邀请码抵扣
+        <radio value="2" checked="{{iswxpay}}" />
+      </label>
+     </view>
+    </radio-group>
+  </view>
+  <view class='codeinput' wx:if="{{ischeck==2}}">
+  <input bindinput="bindKeyInput" placeholder="请输入邀请码" placeholder-style="color:#817C7C" />
+  </view>
+  <button bindtap='topay' class='topay'>立即购买</button>
+</view>

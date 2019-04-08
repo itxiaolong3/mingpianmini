@@ -1,0 +1,14 @@
+<openSetting isSetting='{{isSetting}}' scopeType='writePhotosAlbum' settingApp='{{settingApp}}'
+             settingText='{{settingText}}'></openSetting>
+<import src='../../../../templates/copyright/copyright.wxml'></import>
+<view class='{{(globalData.isIphoneX?"isIphoneX":"")}}'>
+    <view style='width:750rpx;height:800rpx;'>
+        <painter bind:imgOK='onImgOK' bindtap='previewImage' customStyle='' palette='{{template}}'></painter>
+    </view>
+    <view style='height:40rpx;'></view>
+    <template is='copyright' data='{{globalData:globalData}}'></template>
+    <view class='fix-painter-share'>
+        <button bindtap='saveImage' class='fr' style='width:100%;'>保存名片海报</button>
+    </view>
+    <view style='height:40rpx;'></view>
+</view>

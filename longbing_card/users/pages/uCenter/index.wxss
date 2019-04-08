@@ -1,0 +1,8 @@
+page{ background: #f4f4f8; }
+wx-view,wx-button{ display: block; overflow: initial; }
+.setTab-box-view{ position: fixed; }
+.swiper-tab-list{ font-size: 28rpx; color: #323232; }
+.btn-hover{ opacity: 0.8; }
+.showCheck-sec{ width:510rpx; height: 270rpx; padding: 65rpx 55rpx; top: 50%; left: 50%; margin:-200rpx 0rpx 0rpx -310rpx; background: white; z-index: 2; overflow: hidden; }
+.showCheck-sec .title{ font-size: 38rpx; color: #323232; font-weight: bold; }
+.showCheck-sec wx-input{ background: #fafafa; border: 1px solid #dcdcdc; width: 92%; height: 80rpx; line-height: 80rpx; padding: 0rpx 4%; color: #969696; font-size: 30rpx; margin: 30rpx 0rpx; text-align: center }

@@ -1,0 +1,41 @@
+<view class="min">
+    <view class='min-top'>
+        <view>我的团队</view>
+        <view>会员总数:{{alldata['allcount']}}</view>
+        <view class="grade">
+            <view class="oneteam {{ischoose==1?'ischoose':''}}" bindtap='oneteam'>一级会员</view>
+            <view>|</view>
+            <view class="twoteam {{ischoose==0?'ischoose':''}}" bindtap='twoteam'>二级会员</view>
+        </view>
+    </view>
+    <view class="list" wx:for="{{alldata['oneteam']}}" wx:if="{{ischoose==1}}">
+        <view class="list-left">
+            <view>
+                <image src='{{item.avatarUrl}}'></image>
+            </view> 
+        </view>
+        <view class="list-con">
+            <view>{{item.nickName}}</view>
+            <view style='font-size:12px;'>{{item.jointime}}</view>
+        </view>
+        <view class="list-right" wx:if="{{item.leveltype==0}}">普通会员</view>
+        <view class="list-right" wx:if="{{item.leveltype==1}}">黄金代理</view>
+        <view class="list-right" wx:if="{{item.leveltype==2}}">铂金代理</view>
+        <view class="list-right" wx:if="{{item.leveltype==3}}">钻石代理</view>
+    </view>
+     <view class="list" wx:for="{{alldata['twoteam']}}" wx:if="{{ischoose==0}}">
+        <view class="list-left">
+            <view>
+                <image src='{{item.avatarUrl}}'></image>
+            </view> 
+        </view>
+        <view class="list-con">
+            <view>{{item.nickName}}</view>
+            <view style='font-size:12px;'>{{item.jointime}}</view>
+        </view>
+        <view class="list-right" wx:if="{{item.leveltype==0}}">普通会员</view>
+        <view class="list-right" wx:if="{{item.leveltype==1}}">黄金代理</view>
+        <view class="list-right" wx:if="{{item.leveltype==2}}">铂金代理</view>
+        <view class="list-right" wx:if="{{item.leveltype==3}}">钻石代理</view>
+    </view>
+</view>

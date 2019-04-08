@@ -1,0 +1,423 @@
+<view style='width:100%;height:auto;display:block;background:white;'>
+    <block wx:if='{{cardIndexData.info}}'>
+        <block wx:if='{{globalData.configInfo.config.card_type == 1}}'>
+            <form bindsubmit='formSubmit' reportSubmit='true'>
+                <button class='card-more-btn tc' data-content='{{moreStatus}}' data-status='toCardMore'
+                        formType='submit' hoverClass='none'> {{(moreStatus == 1?"展开全部":"收起以下")}}名片信息 <i
+                        class='iconfont icon-right' style='transform: rotate({{(moreStatus == 1?90:270)}}deg)'></i>
+                </button>
+            </form>
+            <form bindsubmit='formSubmit' class='more-card-info-sec {{(moreStatus == 1?"hide":"")}}'
+                  reportSubmit='true'>
+                <block wx:if='{{cardIndexData.info.phone}}'>
+                    <view class='child flex'>
+                        <view class='flex100-15'>手机</view>
+                        <view class='flex100-7'>{{cardIndexData.info.phone}}</view>
+                        <button class='flex100-15 tr' data-content='{{cardIndexData.info.phone}}' data-status='toCall'
+                                data-type='2' formType='submit' hoverClass='none'><em class='tc fr br-3'>拨打</em>
+                        </button>
+                    </view>
+                </block>
+                <block wx:if='{{cardIndexData.info.phone}}'>
+                    <view class='child flex'>
+                        <view class='flex100-15'>手机二</view>
+                        <view class='flex100-7'>{{cardIndexData.info.phone2}}</view>
+                        <button class='flex100-15 tr' data-content='{{cardIndexData.info.phone2}}' data-status='toCall'
+                                data-type='2' formType='submit' hoverClass='none'><em class='tc fr br-3'>拨打</em>
+                        </button>
+                    </view>
+                </block>
+                <block wx:if='{{cardIndexData.info.telephone}}'>
+                    <view class='child flex'>
+                        <view class='flex100-15'>座机</view>
+                        <view class='flex100-7'>{{cardIndexData.info.telephone}}</view>
+                        <button class='flex100-15 tr' data-content='{{cardIndexData.info.telephone}}'
+                                data-status='toCall' data-type='3' formType='submit' hoverClass='none'><em
+                                class='tc fr br-3'>拨打</em></button>
+                    </view>
+                </block>
+                <block wx:if='{{cardIndexData.info.phone400}}'>
+                    <view class='child flex address'>
+                        <view class='flex100-15 hot-call'>400热线</view>
+                        <view class='flex100-7'>{{cardIndexData.info.phone400}}</view>
+                        <button class='flex100-15 tr' data-content='{{cardIndexData.info.phone400}}'
+                                data-status='toCallHot' data-type='11' formType='submit' hoverClass='none'><em
+                                class='tc fr br-3'>拨打</em></button>
+                    </view>
+                </block>
+                <block wx:if='{{cardIndexData.info.wechat}}'>
+                    <view class='child flex address'>
+                        <view class='flex100-15'>微信</view>
+                        <view class='flex100-7'>{{cardIndexData.info.wechat}}</view>
+                        <button class='flex100-15 tr' data-content='{{cardIndexData.info.wechat}}' data-status='toCopy'
+                                data-type='4' formType='submit' hoverClass='none'><em class='tc fr br-3'>复制</em>
+                        </button>
+                    </view>
+                </block>
+                <block wx:if='{{cardIndexData.info.email}}'>
+                    <view class='child flex address'>
+                        <view class='flex100-15'>邮箱</view>
+                        <view class='flex100-7'>{{cardIndexData.info.email}}</view>
+                        <button class='flex100-15 tr' data-content='{{cardIndexData.info.email}}' data-status='toCopy'
+                                data-type='5' formType='submit' hoverClass='none'><em class='tc fr br-3'>复制</em>
+                        </button>
+                    </view>
+                </block>
+                <view class='child flex address'>
+                    <view class='flex100-15'>公司</view>
+                    <!--<view class='flex100-7'>{{cardIndexData.info.myCompany.name}}</view>-->
+                    <view class='flex100-7'>{{cardIndexData.info.company}}</view>
+                    <button class='flex100-15 tr' data-content='{{cardIndexData.info.company}}'
+                            data-status='toCopy' data-type='6' formType='submit' hoverClass='none'><em
+                            class='tc fr br-3'>复制</em></button>
+                </view>
+                <view class='child flex address'>
+                    <view class='flex100-15'>公司二</view>
+                    <!--<view class='flex100-7'>{{cardIndexData.info.myCompany.name}}</view>-->
+                    <view class='flex100-7'>{{cardIndexData.info.company2}}</view>
+                    <button class='flex100-15 tr' data-content='{{cardIndexData.info.company2}}'
+                            data-status='toCopy' data-type='6' formType='submit' hoverClass='none'><em
+                            class='tc fr br-3'>复制</em></button>
+                </view>
+                <view class='child flex address'>
+                    <view class='flex100-15'>公司三</view>
+                    <!--<view class='flex100-7'>{{cardIndexData.info.myCompany.name}}</view>-->
+                    <view class='flex100-7'>{{cardIndexData.info.company3}}</view>
+                    <button class='flex100-15 tr' data-content='{{cardIndexData.info.company3}}'
+                            data-status='toCopy' data-type='6' formType='submit' hoverClass='none'><em
+                            class='tc fr br-3'>复制</em></button>
+                </view>
+                <view class='child flex address'>
+                    <view class='flex100-15'>地址</view>
+                    <view class='flex100-7'>{{cardIndexData.info.myCompany.addr}}</view>
+                    <button class='flex100-15 tr' data-content='{{cardIndexData.info.myCompany.addr}}'
+                            data-status='toMap' data-type='7' formType='submit' hoverClass='none'><em
+                            class='tc fr br-3'>导航</em></button>
+                </view>
+            </form>
+        </block>
+        <form bindsubmit='formSubmit' class='share-communication-sec clearfix' reportSubmit='true'
+              style='padding:{{(globalData.configInfo.config.card_type == 2?"25rpx 4%":(moreStatus == 1?"0rpx 4% 40rpx 4%":"40rpx 4%"))}}'>
+            <view style="display: flex;">
+                <button class='fl tc' data-status='toShowShare' formType='submit' hoverClass='none'>分享</button>
+                <button class='fl tc'  hoverClass='none' style="color: white;background-color: #6c83f4;" bindtap='gocreate'>创建名片</button>
+                <block wx:if='{{globalData.hasClientPhone == true}}'>
+                    <button class='fr tc' data-status='toAddPhone' data-type='1' formType='submit' hoverClass='none' >
+                        存入通讯录
+                    </button>
+                </block>
+            </view>
+
+            <block wx:if='{{globalData.hasClientPhone == false}}'>
+                <button bindgetphonenumber='getChangeCard' class='fr tc' hoverClass='btn-hover' lang='zh_CN'
+                        openType='getPhoneNumber'>{{changeCardText}}
+                </button>
+            </block>
+        </form>
+        <block wx:if='{{globalData.configInfo.config.card_type == 2}}'>
+            <form bindsubmit='formSubmit' class='staff-card-info-sec' reportSubmit='true'>
+                <view class='staff-child'>
+                    <block wx:if='{{cardIndexData.info.phone}}'>
+                        <button class='child br-10 nobor' data-content='{{cardIndexData.info.phone}}'
+                                data-status='toCall' data-type='2' formType='submit' hoverClass='none'>
+                            <view class='text f-icontext c-paragraph-sm'><i class='iconfont icon-dianhua1'
+                                                                            style='color:rgba({{color}},1)'></i> 拨打电话
+                            </view>
+                            <view class='content f-paragraph'>{{cardIndexData.info.phone}}</view>
+                        </button>
+                    </block>
+                    <block wx:if='{{cardIndexData.info.telephone}}'>
+                        <button class='child br-10 nobor' data-content='{{cardIndexData.info.telephone}}'
+                                data-status='toCall' data-type='3' formType='submit' hoverClass='none'>
+                            <view class='text f-icontext c-paragraph-sm'><i class='iconfont icon-zuoji'
+                                                                            style='color:rgba({{color}},1)'></i> 座机电话
+                            </view>
+                            <view class='content f-paragraph'>{{cardIndexData.info.telephone}}</view>
+                        </button>
+                    </block>
+                    <block wx:if='{{cardIndexData.info.phone400}}'>
+                        <button class='child br-10 nobor' data-content='{{cardIndexData.info.phone400}}'
+                                data-status='toCallHot' data-type='11' formType='submit' hoverClass='none'>
+                            <view class='text f-icontext c-paragraph-sm'><i class='iconfont icon-dianhualianxiwo'
+                                                                            style='color:rgba({{color}},1)'></i> 400热线
+                            </view>
+                            <view class='content f-paragraph'>{{cardIndexData.info.phone400}}</view>
+                        </button>
+                    </block>
+                    <block wx:if='{{cardIndexData.info.wechat}}'>
+                        <button class='child br-10 nobor' data-content='{{cardIndexData.info.wechat}}'
+                                data-status='toCopy' data-type='4' formType='submit' hoverClass='none'>
+                            <view class='text f-icontext c-paragraph-sm'><i class='iconfont icon-WeChat'
+                                                                            style='color:rgba({{color}},1)'></i> 加我微信
+                            </view>
+                            <view class='content f-paragraph'>{{cardIndexData.info.wechat}}</view>
+                        </button>
+                    </block>
+                    <block wx:if='{{cardIndexData.info.email}}'>
+                        <button class='child br-10 nobor' data-content='{{cardIndexData.info.email}}'
+                                data-status='toCopy' data-type='5' formType='submit' hoverClass='none'>
+                            <view class='text f-icontext c-paragraph-sm'><i class='iconfont icon-youxiang1'
+                                                                            style='color:rgba({{color}},1)'></i> 复制邮箱
+                            </view>
+                            <view class='content f-paragraph'>{{cardIndexData.info.email}}</view>
+                        </button>
+                    </block>
+                    <block wx:if='{{cardIndexData.info.myCompany.name}}'>
+                        <button class='child br-10 nobor' data-content='{{cardIndexData.info.myCompany.name}}'
+                                data-status='toCopy' data-type='6' formType='submit' hoverClass='none'>
+                            <view class='text f-icontext c-paragraph-sm'><i class='iconfont icon-gongsi00'
+                                                                            style='color:rgba({{color}},1)'></i> 公司名称
+                            </view>
+                            <view class='content f-paragraph'>{{cardIndexData.info.myCompany.name}}</view>
+                        </button>
+                    </block>
+                    <block wx:if='{{cardIndexData.info.myCompany.addr}}'>
+                        <button class='child br-10 nobor' data-content='{{cardIndexData.info.myCompany.addr}}'
+                                data-status='toMap' data-type='7' formType='submit' hoverClass='none'>
+                            <view class='text f-icontext c-paragraph-sm'><i class='iconfont icon-map'
+                                                                            style='color:rgba({{color}},1)'></i> 地址导航
+                            </view>
+                            <view class='content f-paragraph'>{{cardIndexData.info.myCompany.addrMap}}</view>
+                        </button>
+                    </block>
+                </view>
+            </form>
+        </block>
+        <view class='browse-sec'>
+            <view class='content clearfix'>
+                <view class='user fl'>
+                    <block wx:for='{{cardIndexData.peoplesInfo}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                        <block wx:if='{{index < 8}}'>
+                            <image class='br-5' mode='aspectFill' src='{{item.avatarUrl}}'></image>
+                        </block>
+                    </block>
+                </view>
+                <view class='icon-more-zan fr {{(cardIndexData.isThumbs == 1?"active":"")}}'>
+                    <block wx:if='{{cardIndexData.peoplesInfo.length > 7}}'><i class='iconfont icon-more fl'></i>
+                    </block>
+                    <i bindtap='toJump' class='iconfont icon-dianzan fr' data-status='toCardZan' data-type='3'></i>
+                </view>
+            </view>
+            <view class='flex'>
+                <view class='flex100-5'>最近{{(cardIndexData.peoples2?cardIndexData.peoples2:0)}}人浏览</view>
+                <view class='flex100-5 tr'>靠谱：{{(cardIndexData.thumbs_up2?cardIndexData.thumbs_up2:0)}}</view>
+            </view>
+        </view>
+        <block wx:if='{{is_qr == 1}}'>
+            <view class='officical-sec rel' style='border-top:12rpx solid #f4f4f8;'>
+                <official-account binderror='officialAccountErr' bindload='officialAccount'></official-account>
+            </view>
+        </block>
+        <!--<view bindtap='gocreate' style="display: flex;justify-content: center;margin: 0 auto;width: 43%;color: white;background-color: #ED8989;border-radius: 10px;padding: 4px;">创建名片</view>-->
+        <block wx:if='{{ ( (cardIndexData.info.voice ||  (cardIndexData.info.desc && globalData.configInfo.config.motto_switch == 1) )  || cardIndexData.tags.length > 0) }}'>
+            <view class='card-common-title'>个性签名</view>
+        </block>
+        <view class='card-introduce-sec'>
+            <block wx:if='{{cardIndexData.info.voice}}'>
+                <view class='voice rel' style='padding-top:30rpx;'>
+                    <image class='abs br-5' mode='aspectFill'
+                           src='{{(cardIndexData.info.avatar_2?cardIndexData.info.avatar_2:globalData.defaultUserImg)}}'></image>
+                    <em class='abs' style='top:66rpx;'></em>
+                    <view bindtap='toJump' class='content fl rel br-5 {{(playPushStatus == 1?"":"active")}}'
+                          data-status='toVoice' data-type='{{playPushStatus}}'>
+                        <block wx:if='{{playPushStatus == 1}}'>
+                            <image class='rel' src='{{icon_voice_png}}'></image>
+                        </block>
+                        <block wx:if='{{playPushStatus == 2}}'>
+                            <image class='rel' src='{{icon_voice_gif}}'></image>
+                        </block>
+                        <view class='number fr tc abs'><em class='circle'></em> {{cardIndexData.info.voice_time}}</view>
+                    </view>
+                    <view bindtap='toJump' class='zan fr tc rel {{(cardIndexData.voiceThumbs == 1?"active":"")}}'
+                          data-status='toCardZan' data-type='1'><i class='iconfont icon-dianzan1'></i>
+                        <view>点赞</view>
+                    </view>
+                </view>
+            </block>
+            <block wx:if='{{ (cardIndexData.info.desc && globalData.configInfo.config.motto_switch == 1) }}'>
+                <text class='introduce' decode='emsp'
+                      style='padding:0rpx;{{(cardIndexData.tags.length < 1?"padding-bottom:50rpx":"")}}'>
+                    {{cardIndexData.info.desc}}
+                </text>
+            </block>
+            <view class='staff-choose-tags clearfix'
+                  style='{{(cardIndexData.tags.length > 0?"padding-bottom:50rpx":"")}}'>
+                <block wx:for='{{cardIndexData.tags}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                    <block wx:if='{{item.clicked == 1}}'>
+                        <view bindtap='toJump' class='child rel fl' data-index='{{index}}'
+                              data-status='toTagsAgainClick'><em
+                                class='abs addNum staff-tags-animatoinsA {{(clickedInd == index?"staff-tags-animatoinsB":(clickedInd == -1?"staff-tags-animatoinsC":" staff-tags-animatoinsC"))}}'>
+                            +1 </em>
+                            <button class='btn nobor fl rel' hoverClass='btn-hover'
+                                    style='color:white;border:1rpx solid rgba({{color}},1);background:rgba({{color}},1)'
+                                    type='hasbg'> {{item.tag}} | <i class='iconfont icon-dianzan2'
+                                                                    style='margin:0rpx 6rpx;'></i> {{item.count}}
+                            </button>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class='child rel fl'>
+                            <button bindtap='toJump' class='btn nobor fl' data-index='{{index}}'
+                                    data-status='toTagsClick' hoverClass='btn-hover' plain='{{true}}'
+                                    style='color:rgba({{color}},1);border:1rpx solid rgba({{color}},1);background:rgba({{color}},0.05)'
+                                    type='hasbg'> {{item.tag}} | <i class='iconfont icon-dianzan2'
+                                                                    style='margin:0rpx 6rpx;'></i> {{item.count}}
+                            </button>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <block wx:if='{{cardIndexData.goods.length > 0}}'>
+            <view class='card-common-title'>主推商品</view>
+            <view style='width:100%;height:auto;display:block;background:white;padding:40rpx 0rpx 30rpx 0rpx;'>
+                <view class='shop-product-sec clearfix' style='padding:0rpx 4%;margin:0rpx;'>
+                    <block wx:for='{{cardIndexData.goods}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                        <view bindtap='toJump' class='child br-10 rel' data-index='{{index}}' data-status='toShopDetail'
+                              style='{{(index < 2?"margin-top:0rpx":"")}};'>
+                            <block wx:if='{{ ( (item.is_collage == 1 && tmp_showPrice == true)  && item.price != 0) }}'>
+                                <em class='abs tag'>拼团商品</em></block>
+                            <image mode='aspectFill' src='{{item.cover}}'></image>
+                            <view class='clamp2'>{{item.name}}</view>
+                            <view class='price'>
+                                <block wx:if='{{tmp_showPrice == true}}'> {{(item.price != 0?"¥":"")}}
+                                    <block wx:if='{{ (item.shop_price > 1 || item.shop_price == 1) }}'>{{item.shop_price
+                                        + "万"}}
+                                    </block>
+                                    <block wx:if='{{item.shop_price < 1}}'>{{(item.price > 0?item.price:
+                                        (globalData.configInfo.config.btn_talk || "面议") )}}
+                                    </block>
+                                    <block wx:if='{{ (item.price != 0 && item.unit) }}'>/{{item.unit}}</block>
+                                </block>
+                                <block wx:if='{{tmp_showPrice == false}}'>{{ (globalData.configInfo.config.btn_talk ||
+                                    "面议") }}
+                                </block>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </block>
+        <block wx:if='{{cardIndexData.info.my_video}}'>
+            <view class='card-common-title'>我的视频</view>
+        </block>
+        <block wx:if='{{cardIndexData.info.my_video}}'>
+            <view class='company-video-sec card-product-sec' style='width:92%;padding:38rpx 4%;'>
+                <view bindtap='toJump' class='child rel'
+                      data-content='/longbing_card/users/pages/company/detail/detail?status=toPlayVideo&name=我的视频&src={{cardIndexData.info.my_video}}'
+                      data-shareimg='{{ (cardIndexData.info.my_video_cover || globalData.cardVideoImg) }}'
+                      data-status='toPlayVideo'>
+                    <image class='abs cover-img  br-15' mode='aspectFill'
+                           src='{{ (cardIndexData.info.my_video_cover || globalData.cardVideoImg) }}'
+                           style='top:0rpx;height:470rpx;'></image>
+                    <view class='video-bg abs bg_opacity_sec tc  br-15' style='top:0rpx;z-index:9999;height:470rpx;'>
+                        <image class='abs play-img' mode='aspectFill' src='{{globalData.playVideoImg}}'></image>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:if='{{cardIndexData.info.images.length > 0}}'>
+            <view class='card-common-title'>图片展示</view>
+            <view class='card-img-sec'>
+                <block wx:for='{{cardIndexData.info.images}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                    <image bindtap='toJump' data-src='{{item}}' data-status='toImgJump'
+                           data-url='{{cardIndexData.info.my_url}}' mode='widthFix' src='{{item}}'></image>
+                </block>
+            </view>
+        </block>
+        <view class='fixed-right-sec abs'>
+            <view bindtap='toJump' class='circle tc rel' data-status='toCardList'>
+                <block wx:if='{{globalData.configInfo.config.allow_create == 0}}'><i
+                        class='iconfont icon-iconset0147'></i></block>
+                <block wx:else>
+                    <image class='abs' src='/longbing_card/resource/images/icon-cardList.png'
+                           style='border-radius:0rpx;'></image>
+                </block>
+            </view>
+            <block wx:if='{{globalData.isStaff == true}}'>
+                <view bindtap='toJump' class='circle tc' data-method='reLaunch' data-status='toStaff'
+                      data-url='/longbing_card/staff/radar/radar'><i class='iconfont icon-iconset0398'
+                                                                     style='margin-left:-24rpx;'></i></view>
+            </block>
+            <block wx:if='{{globalData.isBoss == true}}'>
+                <view bindtap='toJump' class='circle tc rel' data-method='reLaunch' data-status='toBoss'
+                      data-url='/longbing_card/boss/pages/index/index'>
+                    <image class='abs' src='{{globalData.bossImg}}'
+                           style='width:70rpx;height:70rpx;margin-top:-32rpx;margin-left:-35rpx;'></image>
+                </view>
+            </block>
+        </view>
+        <view bindtap='toJump' class='bg_opacity_sec fix {{(showShareStatus == 1?"":"hide")}}' data-status='toShareCard'
+              data-type='3'></view>
+        <form bindsubmit='formSubmit'
+              class='fix-show-share-sec tc fix {{(showShareStatus == 1?"":"hide")}} {{(globalData.isIphoneX?"isIphoneX":"")}}'
+              reportSubmit='true'>
+            <view class='flex'>
+                <button bindtap='toJump' class='flex100-5' data-status='toShareCard' data-type='1' hoverClass='none'
+                        openType='share'><i class='iconfont icon-weixin1'></i>
+                    <view class='title'>微信好友</view>
+                </button>
+                <button class='flex100-5' data-status='toShareCard' data-type='2' formType='submit' hoverClass='none'><i
+                        class='iconfont icon-pengyouquan-copy'></i>
+                    <view class='title'>名片码</view>
+                </button>
+            </view>
+            <button class='cancel' data-status='toShareCard' data-type='3' formType='submit' hoverClass='none'>取消
+            </button>
+        </form>
+    </block>
+    <block wx:if='{{ ( (cardIndexData && isToShowCard != false)  && globalData.configInfo.config.exchange_switch == 1) }}'>
+        <view class='bg_opacity_sec fix bounceInDown animated {{(isToShowCard == - 1?"slideOutUp":"")}}'></view>
+        <view class='fix-card fix br-10 bounceInDown animated {{(isToShowCard == - 1?"slideOutUp":"")}}'
+              style='height:{{(cardIndexData.info.voice?848:730)}}rpx;'>
+            <block wx:if='{{cardIndexData.info.voice}}'>
+                <view class='card-introduce-sec' style='width:100%;padding:0rpx;'>
+                    <view class='voice rel' style='padding-top:30rpx;padding-bottom:0rpx;'>
+                        <image class='br-5 abs' mode='aspectFill'
+                               src='{{(cardIndexData.info.avatar_2?cardIndexData.info.avatar_2:globalData.defaultUserImg)}}'></image>
+                        <em class='abs' style='top:66rpx;'></em>
+                        <view bindtap='toJump' class='content br-5 {{(playPushStatus == 2?"active":"")}}'
+                              data-status='toVoice' data-type='{{playPushStatus}}'
+                              style='margin:0rpx 0rpx 0rpx 128rpx;width:auto;'>
+                            <block wx:if='{{playPushStatus == 1}}'>
+                                <image class='rel' src='{{icon_voice_png}}'></image>
+                            </block>
+                            <block wx:if='{{playPushStatus == 2}}'>
+                                <image class='rel' src='{{icon_voice_gif}}'></image>
+                            </block>
+                            <view class='number fr tc abs' style='top:55rpx;'><em class='circle'></em>
+                                {{cardIndexData.info.voice_time}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class='bg rel br-10' style='overflow: hidden;margin-top:30rpx;'>
+                <image class='card-img' src='{{ (cardIndexData.info.avatar_2 || globalData.defaultUserImg) }}'></image>
+                <view class='info-text abs'>
+                    <view class='text ellipsis'>
+                        <text>{{ (cardIndexData.info.name || "姓名") }}</text>
+                        {{ (cardIndexData.info.job_name || "职称") }}
+                    </view>
+                    <view class='text ellipsis'>{{ (cardIndexData.info.phone || "电话") }}</view>
+                    <image class='logo-img br-5'
+                           src='{{ (cardIndexData.info.myCompany.logo || globalData.logoImg) }}'></image>
+                </view>
+            </view>
+            <block wx:if='{{globalData.hasClientPhone == true}}'>
+                <form bindsubmit='formSubmit' reportSubmit='true'>
+                    <button class='btn tc' data-status='toAddPhone' data-type='1' formType='submit'
+                            hoverClass='btn-hover'>存入手机通讯录
+                    </button>
+                </form>
+            </block>
+            <block wx:if='{{globalData.hasClientPhone == false}}'>
+                <button bindgetphonenumber='getChangeCard' class='btn tc' hoverClass='btn-hover' lang='zh_CN'
+                        openType='getPhoneNumber'>{{changeCardText}}
+                </button>
+            </block>
+            <view bindtap='toJump' class='text-see tc' data-status='toSee'>看看再说<i class='iconfont icon-right'></i>
+            </view>
+        </view>
+    </block>
+</view>

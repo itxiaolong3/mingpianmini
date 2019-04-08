@@ -1,0 +1,4 @@
+page{ background: white; }
+wx-view,wx-button{ display: block; overflow: initial; }
+.scroll-view-navTop-sec{ width: 96%; height: 80rpx; margin: 0rpx; padding: 0rpx 2%; background: #fafafa; }
+.scroll-item-de{ font-size: 30rpx; }

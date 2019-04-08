@@ -1,0 +1,66 @@
+<import src='../../../../templates/copyright/copyright.wxml'></import>
+<import src='../../../../templates/auth/auth.wxml'></import>
+<block wx:if='{{detailData.title}}'>
+    <block wx:if='{{paramData.status == "toPlayVideo"}}'>
+        <video autoplay='{{true}}' class='abs' controls='{{true}}' loop='{{false}}' poster='{{detailData.cover[0]}}'
+               src='{{detailData.content}}' style='width: 100%; height: 100%;top:0rpx;bottom:0rpx;'></video>
+    </block>
+    <block wx:else>
+        <view class='company-introduce-sec'>
+            <view class='detail-title-sec'>
+                <view class='title'>{{detailData.title}}</view>
+                <view class='time'> {{(detailData.info.name?detailData.info.name:paramData.companyName)}} <em
+                        style='padding:{{(isStaff == "true"?0:20)}}rpx;'>{{detailData.create_time}}</em>
+                    <block wx:if='{{ (type != 3 && detailData.view_count) }}'><em class='fr'><i
+                            class='iconfont icon-chakan2'></i> {{detailData.view_count}} </em></block>
+                </view>
+            </view>
+            <block wx:if='{{ (from_id || isStaff != "false") }}'>
+                <block wx:if='{{ (detailData.user_id != 0 && detailData.cover.length > 0) }}'>
+                    <view style='padding:20rpx 4%;'>
+                        <block wx:for='{{detailData.cover}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                            <image bindtap='{{(globalData.configInfo.config.preview_switch == 1?"toPreviewImg":"")}}'
+                                   data-src='{{item}}' mode='widthFix' src='{{item}}'
+                                   style='width:100%;margin-bottom:12rpx;'></image>
+                        </block>
+                    </view>
+                </block>
+            </block>
+            <htmltowxml bindWxmlTagATap='wxmlTagATap' json='{{detailData.content}}'
+                        showLoading='{{false}}'></htmltowxml>
+        </view>
+        <template is='auth' data='{{globalData:globalData,cardIndexData:cardIndexData}}'></template>
+        <template is='copyright' data='{{globalData:globalData}}'></template>
+        <block wx:if='{{ (paramData.from_id && isStaffAdd) }}'>
+            <block wx:if='{{staffCard.info.is_staff == 1}}'>
+                <view class='fix-addNews-btn fix {{(globalData.isIphoneX?"isIphoneX":"")}}'
+                      style='width:92%;padding:0rpx 4%;{{(globalData.isIphoneX?"padding-bottom:68rpx":"")}}'>
+                    <view class='flex' style='height:100rpx;line-height:100rpx;'>
+                        <view class='flex100-5'>
+                            <image class='circle mr-20 rel fl' src='{{staffCard.info.avatar}}'
+                                   style='width:70rpx;height:70rpx;display:inline-block;top:20rpx;'></image>
+                            <view class='fl ellipsis' style='max-width:240rpx;'>{{staffCard.info.name}}</view>
+                        </view>
+                        <form bindsubmit='formSubmit' class='flex100-5 tr' reportSubmit='true'>
+                            <button class='fr share ml-20 rel' data-status='toShare' formType='submit' hoverClass='none'
+                                    openType='share' style='border-radius:8rpx;top:30rpx;'> 转发
+                            </button>
+                            <button class='fr share ml-20 rel' data-status='toSeeCard' formType='submit'
+                                    hoverClass='none' style='border-radius:8rpx;top:30rpx;'> 看名片
+                            </button>
+                        </form>
+                    </view>
+                </view>
+            </block>
+        </block>
+        <form bindsubmit='formSubmit' class='fixed-right-sec fixed-shop-right-sec fix' reportSubmit='true'>
+            <block wx:if='{{paramData.from_id}}'>
+                <button class='circle tc' data-status='toHome' formType='submit' hoverClass='none'><i
+                        class='abs iconfont icon-shouye'></i></button>
+            </block>
+            <button class='circle tc' formType='submit' hoverClass='none' openType='share'><i
+                    class='iconfont icon-fenxiang'></i></button>
+        </form>
+    </block>
+</block>
+<view class='{{(globalData.isIphoneX?"isIphoneX":"")}}' style='height:100rpx'></view>

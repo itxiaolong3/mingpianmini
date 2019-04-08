@@ -1,0 +1,11 @@
+<view class='main'>
+  <view class='lis' wx:for="{{list}}">
+      <view>
+         <view>{{item.comment}}</view>
+         <view style='maring-top:8px;'>{{item.addtime}}</view>
+      </view>
+      <view class='lismoney'>
+        {{item.money}}元
+      </view>
+  </view>
+</view>

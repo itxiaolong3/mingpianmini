@@ -1,0 +1,276 @@
+<import src='../../../../templates/auth/auth.wxml'></import>
+<import src='../../../../templates/cardType.wxml'></import>
+<openSetting isSetting='{{isSetting}}' scopeType='record' settingApp='{{settingApp}}'
+             settingText='{{settingText}}'></openSetting>
+<block wx:if='{{staffInfo}}'>
+    <template is='{{(staffInfo.card_type?staffInfo.card_type:"cardType1")}}'
+              data='{{cardIndexData:cardIndexData,globalData:globalData}}'></template>
+</block>
+<view class='card-scroll-title'>名片样式</view>
+<scroll-view class='card-scroll-sec clearfix' scrollIntoView='{{toScroll}}' scrollWithAnimation='true' scrollX='true'
+             style='white-space: nowrap; display: flex;'>
+    <block wx:for='{{cardTypeImgList}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+        <view bindtap='toJump'
+              class='card-img br-5 {{(cardTypeList[index] == "cardType1"?"miniImg1":(cardTypeList[index] == "cardType4" == 1?"miniImg2":""))}} {{(index == cardTypeIndex?"active":"")}}'
+              data-index='{{index}}' data-status='toCardType' id='toScroll{{index + 1}}'>
+            <image src='{{item}}'></image>
+        </view>
+    </block>
+</scroll-view>
+<form bindsubmit='formSubmit' reportSubmit='true'>
+    <view class='staff-editInfo-sec'>
+        <view class='child' style='height:120rpx;line-height:120rpx;display:inline-block;margin:20rpx 0rpx;'>
+            <view class='flex' style='padding-bottom:20rpx;'>
+                <view class='flex100-2'>头像</view>
+                <view bindtap='toJump' class='flex100-8 tr' data-status='toUpload' data-type='toAvatar'><i
+                        class='iconfont icon-right2 fr'></i>
+                    <image class='circle fr mr-10' mode='aspectFill'
+                           src='{{(staffInfo.avatar?staffInfo.avatar:globalData.defaultUserImg)}}'></image>
+                </view>
+            </view>
+        </view>
+        <view class='child' style='height:120rpx;line-height:120rpx;display:inline-block;margin:20rpx 0rpx;'>
+            <view class='flex' style='padding-bottom:20rpx;'>
+                <view class='flex100-2'>公司logo</view>
+                <view bindtap='uplogo' class='flex100-8 tr'><i
+                        class='iconfont icon-right2 fr'></i>
+                    <image class='circle fr mr-10' mode='aspectFill'
+                           src='{{(companylogo?companylogo:globalData.defaultUserImg)}}'></image>
+                </view>
+            </view>
+        </view>
+        <view class='child'>
+            <view class='flex'>
+                <view class='flex100-2'>姓名</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputName' name='name' placeholder='姓名' type='text'
+                                                  value='{{staffInfo.name}}'></input></view>
+            </view>
+        </view>
+        <view class='child' style='border-bottom:20rpx solid #f4f4f8;'>
+            <view class='flex'>
+                <view class='flex100-2'>职称</view>
+                <view class='flex100-8 tr'>
+                    <input bindinput='bindInputJob' name='job' placeholder='职称' type='text'
+                                                  value='{{staffInfo.job}}'></input></view>
+                <!--<view class='flex100-8 tr'><i class='iconfont icon-right2 fr'></i>-->
+                <!--<picker bindchange='pickerSelected' data-status='job' range='{{staffInfo.jobList}}'-->
+                <!--rangeKey='{{"name"}}' value='{{job}}'>-->
+                <!--{{(staffInfo.jobList[job].name?staffInfo.jobList[job].name:"请选择")}}-->
+                <!--</picker>-->
+                <!--</view>-->
+            </view>
+        </view>
+        <view class='child'>
+            <view class='flex'>
+                <view class='flex100-2'>手机号</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputPhone' name='phone' placeholder='手机号' type='text'
+                                                  value='{{staffInfo.phone}}'></input></view>
+            </view>
+        </view>
+        <view class='child'>
+            <view class='flex'>
+                <view class='flex100-2'>手机号2</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputPhone2' name='phone2' placeholder='手机号2' type='text'
+                                                  value='{{staffInfo.phone2}}'></input></view>
+            </view>
+        </view>
+        <view class='child'>
+            <view class='flex'>
+                <view class='flex100-2'>微信号</view>
+                <view class='flex100-8 tr'><input name='wechat' placeholder='微信号' type='text'
+                                                  value='{{staffInfo.wechat}}'></input></view>
+            </view>
+        </view>
+        <view class='child'>
+            <view class='flex'>
+                <view class='flex100-2' style='flex:0 0 25%;'>企业微信</view>
+                <view class='flex100-8 tr' style='flex: 0 0 75%;'><input bindinput='bindInputEmail' name='ww_account'
+                                                                         placeholder='企业微信号' type='text'
+                                                                         value='{{staffInfo.ww_account}}'></input>
+                </view>
+            </view>
+        </view>
+        <view class='child'>
+            <view class='flex'>
+                <view class='flex100-2'>座机号</view>
+                <view class='flex100-8 tr'><input name='telephone' placeholder='座机号' type='text'
+                                                  value='{{staffInfo.telephone}}'></input></view>
+            </view>
+        </view>
+        <view class='child'>
+            <view class='flex'>
+                <view class='flex100-2'>邮箱</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputEmail' name='email' placeholder='邮箱' type='text'
+                                                  value='{{staffInfo.email}}'></input></view>
+            </view>
+        </view>
+
+        <view class='child' style='min-height:38rpx;height:auto;line-height:38rpx;padding:26rpx 4%;'>
+            <view class='flex'>
+                <view class='flex100-2'>公司一</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputCompany' name='company' placeholder='公司一' type='text'
+                                                  value='{{staffInfo.company}}'></input>
+
+                </view>
+      
+                <!--<text style="padding: 2px 5px;background-color: #37a2da;color: white;margin-left: 15px;margin-right: 15px;" bindtap="choose_location">定位</text>-->
+          
+            </view>
+        </view>
+        <view class='child' style='min-height:38rpx;height:auto;line-height:38rpx;padding:26rpx 4%;'>
+            <view class='flex'>
+                <view class='flex100-2'>公司二</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputCompany' name='company2' placeholder='公司二' type='text'
+                                                  value='{{staffInfo.company2}}'></input>
+
+                </view>
+      
+                <!--<text style="padding: 2px 5px;background-color: #37a2da;color: white;margin-left: 15px;margin-right: 15px;" bindtap="choose_locationtwo">定位</text>-->
+          
+            </view>
+        </view>
+        <view class='child' style='min-height:38rpx;height:auto;line-height:38rpx;padding:26rpx 4%;'>
+            <view class='flex'>
+                <view class='flex100-2'>公司三</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputCompany' name='company3' placeholder='公司一' type='text'
+                                                  value='{{staffInfo.company3}}'></input>
+
+                </view>
+      
+                <!--<text style="padding: 2px 5px;background-color: #37a2da;color: white;margin-left: 15px;margin-right: 15px;" bindtap="choose_locationthree">定位</text>-->
+          
+            </view>
+        </view>
+    </view>
+    <view class='staff-editInfo-common'>
+        <view class='title'>个性签名</view>
+        <textarea class='br-15' decode='emsp' maxlength='-1' name='desc' placeholder='个性签名'
+                  value='{{staffInfo.desc2}}'></textarea>
+        <view class='voice rel br-15'>
+            <image class='abs circle' mode='aspectFill'
+                   src='{{(staffInfo.avatar?staffInfo.avatar:globalData.defaultUserImg)}}'></image>
+            <view class='flex'>
+                <block wx:if='{{staffInfo.voice}}'><em class='abs tag-em-left'></em>
+                    <view catchtap='play' class='content fl br-5 rel {{(play?"active":"")}}'>
+                        <block wx:if='{{!(play)}}'>
+                            <image class='rel' src='{{icon_voice_png}}'></image>
+                        </block>
+                        <block wx:if='{{play}}'>
+                            <image class='rel' src='{{icon_voice_gif}}'></image>
+                        </block>
+                        <view class='number abs tc'><em class='circle'></em> {{staffInfo.voice_time}}</view>
+                    </view>
+                </block>
+                <block wx:else>暂未录音</block>
+            </view>
+            <block wx:if='{{recordAuthMethod == 1}}'>
+                <button catchtap='toAuthRecord' class='tc br-15' hoverClass='none'> 开始录音</button>
+            </block>
+            <block wx:if='{{recordAuthMethod == 2}}'>
+                <block wx:if='{{record_status == 0}}'>
+                    <button bindlongpress='start' bindtouchstart='start' class='tc br-15' hoverClass='none'> 点击录音
+                    </button>
+                </block>
+                <block wx:if='{{record_status == 1}}'>
+                    <button bindtouchcancel='end' bindtouchend='end' class='tc br-15' hoverClass='none'> 点击结束录音</button>
+                </block>
+                <block wx:if='{{record_status == 2}}'>
+                    <button catchtap='toReRecord' class='tc br-15' hoverClass='none'> 重新录音</button>
+                </block>
+            </block>
+        </view>
+        <block wx:if='{{ (staffInfo.id && staffInfo.is_staff == 1) }}'>
+            <view class='tags-title'>我的标签
+                <text class='fr'>{{(my_tags.length?my_tags.length:0)}}/10</text>
+            </view>
+            <view class='staff-choose-tags'>
+                <block wx:for='{{my_tags}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                    <view bindtap='toJump' class='child rel fl' data-index='{{index}}' data-status='toDeleteTags'><em
+                            class='abs circle'><i class='iconfont icon-open'></i></em>
+                        <button class='btn nobor fl rel' hoverClass='btn-hover' plain='{{true}}'
+                                style='color:rgba({{color}},1);border:1rpx solid rgba({{color}},1);background:rgba({{color}},0.05)'
+                                type='hasbg'> {{item.tag}}
+                        </button>
+                    </view>
+                </block>
+                <block wx:if='{{my_tags.length < 10}}'>
+                    <button class='btn nobor fl' data-index='{{index}}' data-status='toAddTags' formType='submit'
+                            hoverClass='btn-hover' plain='{{true}}'
+                            style='color:rgba(100,100,100,1);border:1rpx solid rgba(200,200,200,1);background:rgba(200,200,200,0.05);font-size:38rpx;'
+                            type='hasbg'> +
+                    </button>
+                </block>
+            </view>
+            <block wx:if='{{sys_tags.length > 0}}'>
+                <view class='tags-title'>可参考标签</view>
+                <view class='staff-choose-tags'>
+                    <block wx:for='{{sys_tags}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                        <block wx:if='{{sys_check[index] == 1}}'>
+                            <button class='btn nobor fl' data-index='{{index}}' data-status='toCheckSysTags'
+                                    data-type='{{sys_check[index]}}' formType='submit' hoverClass='btn-hover'
+                                    plain='{{true}}'
+                                    style='color:rgba({{color}},1);border:1rpx solid rgba({{color}},1);background:rgba({{color}},0.05)'
+                                    type='hasbg'> {{item.tag}}
+                            </button>
+                        </block>
+                        <block wx:else>
+                            <button class='btn nobor fl' data-index='{{index}}' data-status='toCheckSysTags'
+                                    data-type='{{sys_check[index]}}' formType='submit' hoverClass='btn-hover'
+                                    plain='{{true}}'
+                                    style='color:rgba(100,100,100,1);border:1rpx solid rgba(200,200,200,1);background:rgba(200,200,200,0.05)'
+                                    type='hasbg'> {{item.tag}}
+                            </button>
+                        </block>
+                    </block>
+                </view>
+            </block>
+        </block>
+        <view style='height:50rpx;'></view>
+    </view>
+    <view class='staff-editInfo-common'>
+        <view class='title'>图片展示</view>
+        <view class='imgs clearfix'>
+            <block wx:for='{{staffInfo.images}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
+                <view class='upload-staff-images rel'><em bindtap='toJump' class='abs circle tc' data-index='{{index}}'
+                                                          data-status='toDeleteImg'><i
+                        class='iconfont icon-open'></i></em>
+                    <image mode='aspectFill' src='{{item}}'></image>
+                </view>
+            </block>
+            <view bindtap='toJump' class='imgs-icon tc fl {{(staffInfo.images.length < 8?"":"hide")}}'
+                  data-status='toUpload' data-type='toImages'><i class='iconfont icon-open'></i></view>
+        </view>
+    </view>
+    <block wx:if='{{ (!(staffInfo.id) ||  (staffInfo.is_staff == 0 && globalData.configInfo.config.code) ) }}'>
+        <view class='staff-editInfo-common'>
+            <view class='title'>免审口令</view>
+            <view class='textarea br-15' style='height:60rpx;line-height:60rpx;min-height:auto;'><i
+                    class='iconfont icon-ruokoulingguizeguanli rel' style='color:#969696;font-size:44rpx;'></i><input
+                    class='fr tr' name='code' placeholder='请输入口令' style='width:80%;height:60rpx;line-height:60rpx;'
+                    type='text' value='{{staffInfo.code}}'></input></view>
+        </view>
+    </block>
+    <button class='fix-painter-share tc' data-status='toEditStaff' formType='submit' hoverClass='none'
+            style='border-radius:15rpx;width:92%;margin:60rpx auto;background:#e93636;'> 保存
+    </button>
+</form>
+<block wx:if='{{showTostImg == true}}'>
+    <view class='showTostImg-sec bg_opacity_sec br-15 tc fix'>
+        <image src='https://retail.xiaochengxucms.com/images/12/2018/11/LsT9YOPZjd9y4b9ADFA9UfPBAPPtS9.gif'></image>
+        <view class='title'>正在录音中</view>
+    </view>
+</block>
+<block wx:if='{{showAddUseSec == true}}'>
+    <view class='bg_opacity_sec fix'></view>
+</block>
+<block wx:if='{{showAddUseSec == true}}'>
+    <form bindsubmit='formSubmit' class='add-useMessage-form' reportSubmit='true'>
+        <view class='title'>新建标签</view>
+        <textarea maxlength='-1' name='content' placeholder='请输入您的印象标签' type='text'
+                  value='{{showAddUseSecContent}}'></textarea>
+        <button class='btn cancel' data-status='toCancel' formType='submit' hoverClass='none'>取消</button>
+        <button class='btn' data-status='toSaveUseMessage' formType='submit' hoverClass='none'>确认</button>
+    </form>
+</block>
+<template is='authUser' data='{{globalData:globalData}}'></template>
+<view class='{{(globalData.isIphoneX?"isIphoneX":"")}}'></view>
