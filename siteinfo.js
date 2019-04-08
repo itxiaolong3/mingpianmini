@@ -1,5 +1,5 @@
 module.exports = {
-    name: "博胜名片",
+    name: "启脉名片",
     uniacid: "2",
     acid: "2",
     multiid: "0",
