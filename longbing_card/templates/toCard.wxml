@@ -89,10 +89,15 @@
                 </view>
                 <view class='child flex address'>
                     <view class='flex100-15'>地址</view>
-                    <view class='flex100-7'>{{cardIndexData.info.myCompany.addr}}</view>
+                    <!--<view class='flex100-7'>{{cardIndexData.info.myCompany.addr}}</view>-->
+                    <view class='flex100-7'>{{cardIndexData.info.comaddre}}</view>
                     <button class='flex100-15 tr' data-content='{{cardIndexData.info.myCompany.addr}}'
                             data-status='toMap' data-type='7' formType='submit' hoverClass='none'><em
                             class='tc fr br-3'>导航</em></button>
+                </view>
+                <view class='child flex address'>
+                    <view class='flex100-15'>微信二维码</view>
+                    <view class='flex100-7'><image src='{{cardIndexData.info.wxqrcode}}' bindtap='proimg' data-src="{{cardIndexData.info.wxqrcode}}" style='width:60px;height:60px;'></image></view>
                 </view>
             </form>
         </block>
@@ -100,7 +105,7 @@
               style='padding:{{(globalData.configInfo.config.card_type == 2?"25rpx 4%":(moreStatus == 1?"0rpx 4% 40rpx 4%":"40rpx 4%"))}}'>
             <view style="display: flex;">
                 <button class='fl tc' data-status='toShowShare' formType='submit' hoverClass='none'>分享</button>
-                <button class='fl tc'  hoverClass='none' style="color: white;background-color: #6c83f4;" bindtap='gocreate'>创建名片</button>
+                <button class='fl tc'  hoverClass='none' style="color: white;background-color: #6c83f4;" bindtap='gocreate'>注册名片</button>
                 <block wx:if='{{globalData.hasClientPhone == true}}'>
                     <button class='fr tc' data-status='toAddPhone' data-type='1' formType='submit' hoverClass='none' >
                         存入通讯录
@@ -206,6 +211,12 @@
         <block wx:if='{{is_qr == 1}}'>
             <view class='officical-sec rel' style='border-top:12rpx solid #f4f4f8;'>
                 <official-account binderror='officialAccountErr' bindload='officialAccount'></official-account>
+            </view>
+        </block>
+        <view class='card-common-title'>公司简介</view>
+        <block>
+            <view style='padding: 12px;font-size: 12px;'>
+                {{cardIndexData.info.comdesc}}
             </view>
         </block>
         <!--<view bindtap='gocreate' style="display: flex;justify-content: center;margin: 0 auto;width: 43%;color: white;background-color: #ED8989;border-radius: 10px;padding: 4px;">创建名片</view>-->

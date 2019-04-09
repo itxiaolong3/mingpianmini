@@ -102,16 +102,13 @@ Page({
   }), _defineProperty(_data, "swiperIndexCur", 0), _defineProperty(_data, "refreshCompany", !1), _defineProperty(_data, "icon_voice_png", "https://retail.xiaochengxucms.com/images/12/2018/11/IgvvwVNUIVn6UMh4Dmh4m6nM4Widug.png"), _defineProperty(_data, "icon_voice_gif", "https://retail.xiaochengxucms.com/images/12/2018/11/CRFPPPTKf6f45J6H3N44BNCrjbFZxH.gif"), _data),
   onLoad: function(a) {
     var r = this;
+    wx.hideShareMenu();
     app.util.showLoading(1), console.log("options************", a);
     var t = !1,
       e = "cardList";
     wx.hideShareMenu();
     var o = 0;
-    (1 == a.is_qr && (o = 1), a.currentTabBar && (t = !0, "cardList" == a.currentTabBar && (t = !1), e = a.currentTabBar, "toCard" == a.currentTabBar ? wx.showShareMenu({
-      withShareTicket: !0,
-      success: function(a) {},
-      fail: function(a) {}
-    }) : "toShop" == a.currentTabBar ? wx.showShareMenu() : "toNews" == a.currentTabBar ? wx.showShareMenu() : "toCompany" == a.currentTabBar && wx.showShareMenu()), wx.getStorageSync("user")) && (wx.getStorageSync("user").phone && (app.globalData.hasClientPhone = !0, r.setData({
+    (1 == a.is_qr && (o = 1), a.currentTabBar && (t = !0, "cardList" == a.currentTabBar && (t = !1), e = a.currentTabBar, "toCard" == a.currentTabBar ? wx.hideShareMenu() : "toShop" == a.currentTabBar ? wx.showShareMenu() : "toNews" == a.currentTabBar ? wx.showShareMenu() : "toCompany" == a.currentTabBar && wx.showShareMenu()), wx.getStorageSync("user")) && (wx.getStorageSync("user").phone && (app.globalData.hasClientPhone = !0, r.setData({
       "globalData.hasClientPhone": !0
     })));
     var n = {},
@@ -178,6 +175,7 @@ Page({
   onReady: function() {},
   onShow: function() {
     console.log("页面显示");
+    wx.hideShareMenu();
     //我的代码////////////////
       let reqparam={"user_id":wx.getStorageSync("userid")}
       _index.baseModel.getUserinfo_me(reqparam).then((d) => {
@@ -186,14 +184,17 @@ Page({
               wx.showModal({
                   title: '到期提示',
                   content: '已过期，请升级会员',
-                  showCancel:false,
+                  showCancel:true,
                   success(res) {
                       if (res.confirm) {
-                          wx.redirectTo({
+                          // wx.redirectTo({
+                          //     url: '/longbing_card/pages/mypage/vippay'
+                          // })
+                        wx.navigateTo({
                               url: '/longbing_card/pages/mypage/vippay'
                           })
                       } else if (res.cancel) {
-                          console.log('用户点击取消')
+                          console.log('用户点击取消');
                       }
                   }
               })
@@ -382,13 +383,14 @@ Page({
   },
   onShareAppMessage: function(a) {
     var t = this;
+    wx.hideShareMenu();
     if ("toCard" == t.data.currentTabBar) {
       t.toVideoStop(), t.toBGdestroy();
       var e = t.data.cardIndexData;
       t.getShareRecord(), t.data.paramData.to_uid != wx.getStorageSync("userid") && t.getForwardRecord(1, 0);
       var o = Date.now(),
-        n = e.info.share_text,
-        i = e.share_img;
+          n = e.info.share_text,
+          i = e.share_img;
       console.log(n,'分享标题')
       if (i && "cardType1" != e.info.card_type && "cardType4" != e.info.card_type || (i = e.info.avatar_2), i = i + "?" + o, e.coupon.id) "toVoucher" == a.target.dataset.status && (n = e.coupon.title, i = "https://retail.xiaochengxucms.com/images/2/2019/01/mFL0pH86Fd8bsLS3HF98oIJeFdcs6F.png");
       return {
@@ -405,11 +407,11 @@ Page({
     if ("toNews" == t.data.currentTabBar) {
       if ("button" === a.from) {
         var r = a.target.dataset,
-          s = r.index,
-          d = (r.status, r.id),
-          l = void 0,
-          u = (e = t.data.newsList.list)[s].cover[0],
-          c = void 0;
+            s = r.index,
+            d = (r.status, r.id),
+            l = void 0,
+            u = (e = t.data.newsList.list)[s].cover[0],
+            c = void 0;
         if (0 == e[s].type) l = "/longbing_card/users/pages/news/detail/detail?id=" + d + "&fromshare=true&from_id=" + wx.getStorageSync("userid"), 0 != e[s].user_id && (l = l + "&isStaff=true&to_uid=" + e[s].user_info.fans_id), 0 == e[s].user_id && (l = l + "&companyName=" + t.data.newsList.timeline_company.name + "&to_uid=" + app.globalData.to_uid), c = u;
         else if (1 == e[s].type) {
           l = "/longbing_card/users/pages/news/detail/detail?id=" + d + "&to_uid=" + app.globalData.to_uid + "&from_id=" + wx.getStorageSync("userid") + "&status=toPlayVideo&name=" + e[s].title + "&src=" + e[s].content + "&report_id=" + e[s].id + "&id=" + e[s].id + "&fromshare=true&shareimg=";
@@ -579,6 +581,7 @@ Page({
             e = a.cardIndexData;
           if ("toCard" == t) {
             e.info.bg && (innerAudioContextBG.src = e.info.bg);
+            wx.hideShareMenu();
             var o = 1;
             1 == e.info.bg_switch && e.info.bg && (console.log("自动播放背景音乐"), o = 2, innerAudioContextBG.play(function() {})), w.setData({
               playPushBgStatus: o
@@ -1177,9 +1180,12 @@ Page({
     if ("toTagsAgainClick" == o && _xx_util2.default.showFail("已经点赞过了！"), "toSearchCardFocus" == o && e.setData({
         toSearchCard: !0
       }), "toCopyright" == o && e.data.globalData.configInfo.config.logo_phone && app.util.goUrl(n), "toJumpUrl" != o && "toStaff" != o && "toBoss" != o && "toShowMore" != o && "toCarIndex" != o && "toMine" != o || ("toStaff" != o && "toBoss" != o || (e.toVideoStop(), innerAudioContextBG.stop()), app.util.goUrl(n)), "toImgJump" == o) {
+
       var p = e.data.globalData.configInfo.config.preview_switch,
         g = e.data.cardIndexData.info.images;
-      if (1 == p) {
+      console.log('点击了'+p)
+      console.log(g,'图片集合')
+      //if (1 == p) {
         if (0 < g.length) {
           e.toVideoStop(), e.toBGdestroy();
           var h = n.target.dataset.src;
@@ -1188,7 +1194,7 @@ Page({
             urls: g
           })
         }
-      } else app.util.goUrl(n)
+      //} else app.util.goUrl(n)
     }
     if ("toMoreDetail" == o && (l = l + "&to_uid=" + app.globalData.to_uid, wx.navigateTo({
         url: l
@@ -1334,7 +1340,7 @@ Page({
         })
       }), "toShopDetail" == o) {
       var y = "";
-      "toCard" == e.data.currentTabBar ? (y = e.data.cardIndexData.goods, e.toVideoStop(), e.toBGdestroy()) : "toShop" == e.data.currentTabBar && (y = e.data.shop_all.list), wx.navigateTo({
+      "toCard" == e.data.currentTabBar ? (y = e.data.cardIndexData.goods, e.toVideoStop(), e.toBGdestroy(),wx.hideShareMenu()) : "toShop" == e.data.currentTabBar && (y = e.data.shop_all.list), wx.navigateTo({
         url: "/longbing_card/pages/shop/detail/detail?id=" + y[t].id + "&to_uid=" + app.globalData.to_uid + "&from_id=" + app.globalData.from_id
       })
     } else if ("toTabClickMore" == o || "toTabClick" == o) {
@@ -1547,16 +1553,12 @@ Page({
         title: r
       }), t.setData({
         currentTabBar: i
-      }), wx.showShareMenu({
-        withShareTicket: !0,
-        success: function(a) {},
-        fail: function(a) {}
-      });
+      }),wx.hideShareMenu();
       else "toPageUrl" == t.data.globalData.tabBarList[n].jump ? (wx.setNavigationBarTitle({
         title: r
       }), t.setData({
         currentTabBar: i
-      }), wx.showShareMenu()) : app.util.goUrl(a, !0);
+      }), wx.hideShareMenu()) : app.util.goUrl(a, !0);
       wx.pageScrollTo({
         duration: 0,
         scrollTop: 0
@@ -1568,7 +1570,7 @@ Page({
       }, function() {
         "toCard" == t.data.currentTabBar ? t.setData({
           refreshCardIndex: !1
-        }, function() {
+        },wx.hideShareMenu(), function() {
           "tabBar" == t.data.toCardStatus && (t.data.cardIndexData.to_uid || t.getCardIndexData())
         }) : "toShop" == t.data.currentTabBar ? t.setData({
           refreshShop: !1
@@ -1702,7 +1704,7 @@ Page({
       }, function() {
         "toCard" == n.data.currentTabBar ? n.setData({
           refreshCardIndex: !1
-        }, function() {
+        },wx.hideShareMenu(), function() {
           "tabBar" == n.data.toCardStatus && (n.data.cardIndexData.to_uid || n.getCardIndexData())
         }) : "toShop" == n.data.currentTabBar ? n.setData({
           refreshShop: !1
@@ -1737,6 +1739,13 @@ Page({
   mygood:function(){
     wx.showToast({
       title: '待开发',
+    })
+  },
+  proimg:function(e){
+    console.log(e,'查看数据')
+    wx.previewImage({
+      current: e.currentTarget.dataset.src, // 当前显示图片的http链接
+      urls: [e.currentTarget.dataset.src] // 需要预览的图片http链接列表
     })
   }
 });

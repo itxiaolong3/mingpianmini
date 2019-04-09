@@ -38,7 +38,7 @@
     <view class='card-list-sec'>
         <block wx:for='{{collectionList.list}}' wx:for-item='item' wx:for-index='index' wx:key='key'>
             <view bindtap='toJump' class='child rel' data-index='{{index}}' data-status='toCardIndex'>
-                <view class='title ellipsis'> {{item.create_time2}}
+                <view class='title ellipsis' wx:if='{{ (item.to_uid == userid) }}'> {{item.create_time2}}
                     <block wx:if='{{!(item.from_uid)}}'>来自{{item.shareBy}}</block>
                     <block wx:else>
                         <block wx:if='{{ (item.from_uid == userid || item.from_uid == 0) }}'>来自搜索</block>
@@ -57,7 +57,7 @@
                         </block>
                     </block>
                 </view>
-                <view class='card br-15 clearfix'>
+                <view class='card br-15 clearfix' wx:if='{{ (item.to_uid == userid) }}'>
                     <view class='content fl rel'>
                         <!--<view class='company ellipsis'>{{ (item.userInfo.myCompany.name || "公司名称") }}</view>-->
                         <view class='company ellipsis'>{{ (item.userInfo.company || "公司名称") }}</view>

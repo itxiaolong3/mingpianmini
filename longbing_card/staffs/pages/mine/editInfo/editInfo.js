@@ -39,7 +39,8 @@ Page({
         settingNum: 0,
         start: !1,
         play: !1,
-        companylogo:''
+        companylogo:'',
+        wxqrcode:''
     }, onLoad: function (a) {
         var o = this;
         app.util.showLoading(1), wx.hideShareMenu(), o.getStaffCard(a);
@@ -108,6 +109,8 @@ Page({
         this.setData({"cardIndexData.info.company2": a.detail.value})
     },bindInputCompany3: function (a) {
         this.setData({"cardIndexData.info.company3": a.detail.value})
+    },bindInputcomaddre: function (a) {
+        this.setData({"cardIndexData.info.comaddre": a.detail.value})
     }, pickerSelected: function (a) {
         var t = this, e = a.currentTarget.dataset.status;
         // if ("job" == e) {
@@ -176,7 +179,9 @@ Page({
                         "cardIndexData.info.company": t.company,
                         "cardIndexData.info.company2": t.company2,
                         "cardIndexData.info.company3": t.company3,
+                        "cardIndexData.info.comaddre": t.comaddre,
                         companylogo:t.companylogo,
+                        wxqrcode:t.wxqrcode,
                         "cardIndexData.info.job_name": a.data.data.job_list[a.data.data.job_index].name
                     }, function () {
                         "1" != t.is_staff || u.avatar || l.getCardIndexData()
@@ -323,7 +328,7 @@ Page({
         if (s || (l = o.avatar), 0 < e.length) for (var g in e) u += e[g] + ","; else for (var p in o.images) u += o.images[p] + ",";
         var m = f.configInfo.company_list[d].id;
         //公司logo传数据到接口
-        u = u.slice(0, -1), i.avatar = l,i.companylogo=n.data.companylogo, i.images = u, i.job_id = c, i.company_id = m, i.card_type = o.card_type, n.toUploadRecord(function () {
+        u = u.slice(0, -1), i.avatar = l,i.companylogo=n.data.companylogo,i.wxqrcode=n.data.wxqrcode,i.images = u, i.job_id = c, i.company_id = m, i.card_type = o.card_type, n.toUploadRecord(function () {
             var a = n.data, t = a.staffInfoVoice, e = a.staffInfo, o = t;
             t || (o = e.voice), i.voice = o, i.voice_time = e.voice_time, n.toEditStaff(i)
         })
@@ -350,6 +355,7 @@ Page({
     }, formSubmit: function (a) {
         var t = this, e = a.detail.formId, o = _xx_util2.default.getFromData(a), n = o.status, i = o.index, s = o.type,
             r = a.detail.value.content;
+
         if (t.toSaveFormIds(e), "toEditStaff" == n) {
             var d = a.detail.value;
             1 == t.data.record_status ? (t.end(), wx.showLoading({title: "录音上传中", mask: !0}), setTimeout(function () {
@@ -402,7 +408,7 @@ Page({
         let i=this;
         wx.chooseLocation({
             success: (res) => {
-                i.setData({"staffInfo.company": res.address})
+                i.setData({"staffInfo.comaddre": res.address})
             }
         })
     },
@@ -440,6 +446,33 @@ Page({
                         })
                         wx.hideLoading();
                        }, fail: function (t) {
+                        wx.hideLoading(), console.log("获取图片失败，请稍后重试")
+                        wx.showToast({
+                            title: '上传失败！',
+                        })
+                    }
+                })
+            }
+        })
+    },
+    upwx:function (e) {
+        //upwx
+        wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['album', 'camera'],
+            success: (res) => {
+                var i = this;
+                wx.showLoading('上传中...')
+                wx.uploadFile({
+                    url: this.data.uploadUrl, filePath: res.tempFilePaths[0], name: "upfile", formData: {}, success: function (t) {
+                        var e = JSON.parse(t.data), a = e.data.path;
+                        console.log(a, "获取图片成功 res");
+                        i.setData({
+                            wxqrcode:a,
+                        })
+                        wx.hideLoading();
+                    }, fail: function (t) {
                         wx.hideLoading(), console.log("获取图片失败，请稍后重试")
                         wx.showToast({
                             title: '上传失败！',

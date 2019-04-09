@@ -90,11 +90,12 @@ wx-ec-canvas { width: 100%; height: 100%; }
 .card-index-sec-2 .card-bg{ width:424rpx; height: 389rpx; top: 0rpx; left: 0rpx; z-index:1; }
 .card-index-sec-2 .user-img{ width: 312rpx; height: 389rpx; top: 0rpx; right: 0rpx; z-index: 0; }
 .card-index-sec-2 .user-info-sec{ width: 300rpx; height: 389rpx; padding-left:30rpx; top: 0rpx; left: 0rpx; z-index: 2; }
-.card-index-sec-2 .user-info-sec .company-logo{ width: 22rpx; height: 22rpx; padding: 2rpx; top: 24rpx; left: 30rpx; }
-.card-index-sec-2 .user-info-sec .company-name{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:23rpx 0rpx 23rpx 40rpx; }
-.card-index-sec-2 .user-info-sec .user-name{ font-size: 34rpx; color: #323232; margin-top:35rpx; }
+.card-index-sec-2 .user-info-sec .company-logo{ width: 60rpx; height:60rpx; padding: 2rpx; top: 12rpx; left: 30rpx;z-index: 5; }
+.card-index-sec-2 .user-info-sec .company-name{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:15rpx 0rpx 0rpx 70rpx; }
+.card-index-sec-2 .user-info-sec .company-name1{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:5rpx 0rpx 23rpx 70rpx; }
+.card-index-sec-2 .user-info-sec .user-name{ font-size: 34rpx; color: #323232; }
 .card-index-sec-2 .user-info-sec .job-name{ font-size: 20rpx; color: #323232; margin-bottom: 65rpx; }
-.card-index-sec-2 .user-info-sec .contact-info{ line-height: 36rpx; font-size: 22rpx; color: #444444; margin:10rpx 0rpx 0rpx 48rpx; }
+.card-index-sec-2 .user-info-sec .contact-info{ line-height: 36rpx; font-size: 22rpx; color: #444444; margin:1rpx 0rpx 0rpx 6rpx; }
 .card-index-sec-2 .user-info-sec .contact-info wx-em{ width: 34rpx; height: 34rpx; line-height: 34rpx; background: #eaeaea; left: 30rpx; }
 .card-index-sec-2 .user-info-sec .contact-info wx-em wx-i{ color: #969696; font-size: 20rpx; }
 .card-index-sec-2 .card-bg-2{ width:100%; height: 401rpx; top: 0rpx; left: 0rpx; z-index:0; }

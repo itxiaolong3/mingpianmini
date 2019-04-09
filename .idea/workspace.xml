@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2348ffd1-85e1-45f2-bc00-072dab39732b" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/longbing_card/staffs/pages/mine/editInfo/editInfo.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="168" column="71" selection-start-line="168" selection-start-column="67" selection-end-line="168" selection-end-column="71" />
+              <folding>
+                <element signature="n#style#0;n#view#0;n#view#12;n#view#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#text#0;n#view#0;n#view#12;n#view#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/longbing_card/staffs/pages/mine/editInfo/editInfo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="418" column="46" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/longbing_card/pages/index/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="1704" column="15" selection-start-line="1704" selection-start-column="9" selection-end-line="1704" selection-end-column="15" />
+              <folding>
+                <element signature="e#9833#9950#0" />
+                <element signature="e#9975#10092#0" />
+                <element signature="e#11622#12737#0" />
+                <element signature="e#12767#13097#0" />
+                <element signature="e#16506#17260#0" />
+                <element signature="e#17296#17678#0" />
+                <element signature="e#17719#17912#0" />
+                <element signature="e#17945#17999#0" />
+                <element signature="e#18029#18111#0" />
+                <element signature="e#18147#18363#0" />
+                <element signature="e#18397#19107#0" />
+                <element signature="e#19137#19333#0" />
+                <element signature="e#22297#23864#0" />
+                <element signature="e#23894#25082#0" />
+                <element signature="e#25110#25191#0" />
+                <element signature="e#25497#26371#0" />
+                <element signature="e#26407#27213#0" />
+                <element signature="e#27244#27659#0" />
+                <element signature="e#27688#28276#0" />
+                <element signature="e#28304#28901#0" />
+                <element signature="e#28929#30155#0" />
+                <element signature="e#30179#30258#0" />
+                <element signature="e#30285#31019#0" />
+                <element signature="e#31046#31624#0" />
+                <element signature="e#31661#32426#0" />
+                <element signature="e#32453#33499#0" />
+                <element signature="e#33529#33614#0" />
+                <element signature="e#33651#33868#0" />
+                <element signature="e#33899#34074#0" />
+                <element signature="e#34105#34266#0" />
+                <element signature="e#34298#34489#0" />
+                <element signature="e#34522#35244#0" />
+                <element signature="e#35272#35346#0" />
+                <element signature="e#35378#35450#0" />
+                <element signature="e#35481#35519#0" />
+                <element signature="e#35548#35584#0" />
+                <element signature="e#35615#35653#0" />
+                <element signature="e#35685#35752#0" />
+                <element signature="e#35788#35824#0" />
+                <element signature="e#35853#35943#0" />
+                <element signature="e#35970#36127#0" />
+                <element signature="e#36163#36209#0" />
+                <element signature="e#36242#36355#0" />
+                <element signature="e#36386#37162#0" />
+                <element signature="e#37197#37951#0" />
+                <element signature="e#37990#38430#0" />
+                <element signature="e#38460#38734#0" />
+                <element signature="e#51984#52083#0" />
+                <element signature="e#52124#52477#0" />
+                <element signature="e#52508#53135#0" />
+                <element signature="e#59974#60071#0" />
+                <element signature="e#60103#60218#0" />
+                <element signature="e#60248#60299#0" />
+                <element signature="e#60321#60503#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/longbing_card/templates/toCard.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="106" column="62" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#image#0;n#view#1;n#view#4;n#form#1;n#block#0;n#block#0;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#view#0;n#block#0;n#view#0;n#!!top" />
+                <element signature="n#style#0;n#view#0;n#block#3;n#block#0;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#block#4;n#block#0;n#view#0;n#!!top" />
+                <element signature="n#block#5;n#block#0;n#view#0;n#!!top" />
+                <element signature="n#block#6;n#block#0;n#view#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>uplogo</find>
+      <find>toEditStaff</find>
+      <find>formSubmit</find>
+      <find>展开全部</find>
+      <find>choose_location</find>
+      <find>contact-info</find>
+      <find>com</find>
+      <find>desc2</find>
+      <find>company2</find>
+      <find>desc</find>
+      <find>preview_switch</find>
+      <find>来自搜索</find>
+      <find>toImgJump</find>
+      <find>已</find>
+      <find>ispasstime</find>
+      <find>onShare</find>
+      <find>名片</find>
+      <find>ons</find>
+      <find>onsha</find>
+      <find>页面隐藏</find>
+      <find>onshow</find>
+      <find>hideShareMenu</find>
+      <find>toc</find>
+      <find>tocard</find>
+      <find>公司二</find>
+      <find>过期</find>
+      <find>分享</find>
+      <find>toShowShare</find>
+      <find>toset</find>
+      <find>toCard</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\小程序\mingpianmini</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/longbing_card/staffs/pages/mine/editInfo/editInfo.js" />
+        <option value="$PROJECT_DIR$/app.wxss" />
+        <option value="$PROJECT_DIR$/longbing_card/templates/cardType.wxml" />
+        <option value="$PROJECT_DIR$/longbing_card/staffs/pages/mine/editInfo/editInfo.wxml" />
+        <option value="$PROJECT_DIR$/longbing_card/templates/toCard.wxml" />
+        <option value="$PROJECT_DIR$/longbing_card/templates/cardList.wxml" />
+        <option value="$PROJECT_DIR$/longbing_card/staff/spread/spread.wxml" />
+        <option value="$PROJECT_DIR$/longbing_card/pages/index/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="495" />
+    <option name="y" value="59" />
+    <option name="width" value="1685" />
+    <option name="height" value="920" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mingpianmini" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mingpianmini" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mingpianmini" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mingpianmini" type="462c0819:PsiDirectoryNode" />
+              <item name="longbing_card" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mingpianmini" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mingpianmini" type="462c0819:PsiDirectoryNode" />
+              <item name="longbing_card" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mingpianmini" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/web/西夫/pc" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2348ffd1-85e1-45f2-bc00-072dab39732b" name="Default Changelist" comment="" />
+      <created>1554689147557</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554689147557</updated>
+      <workItem from="1554689148980" duration="28271000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="28271000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="150" y="25" width="1685" height="920" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.054153845" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/longbing_card/staffs/pages/mine/upload/upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="94" column="144" selection-start-line="94" selection-start-column="144" selection-end-line="94" selection-end-column="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/staffs/pages/mine/editInfo/editInfo.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="168" column="71" selection-start-line="168" selection-start-column="67" selection-end-line="168" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#view#0;n#view#12;n#view#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#text#0;n#view#0;n#view#12;n#view#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/staffs/pages/mine/editInfo/editInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="418" column="46" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/resource/js/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-278">
+          <caret line="391" column="3" selection-start-line="391" selection-start-column="3" selection-end-line="391" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/templates/html2wxml/html2wxml-main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="685" selection-start-column="685" selection-end-column="685" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/pages/index/index.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/templates/openSetting/openSetting.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/staffs/pages/mine/editInfo/editInfo.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/staffs/pages/custom/detail/detail.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/pages/index/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1782">
+          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/staff/spread/spread.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="101" selection-start-line="12" selection-start-column="101" selection-end-line="12" selection-end-column="101" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/templates/toCard.wxss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17570" column="17" selection-start-line="17570" selection-start-column="17" selection-end-line="17570" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="186" column="25" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/templates/cardList.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="59" column="87" selection-start-line="59" selection-start-column="87" selection-end-line="59" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/templates/cardType.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#view#3;n#view#0;n#view#0;n#view#0;n#template#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/templates/toCard.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="106" column="62" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#image#0;n#view#1;n#view#4;n#form#1;n#block#0;n#block#0;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#view#0;n#block#0;n#view#0;n#!!top" />
+            <element signature="n#style#0;n#view#0;n#block#3;n#block#0;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#block#4;n#block#0;n#view#0;n#!!top" />
+            <element signature="n#block#5;n#block#0;n#view#0;n#!!top" />
+            <element signature="n#block#6;n#block#0;n#view#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/longbing_card/pages/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="1704" column="15" selection-start-line="1704" selection-start-column="9" selection-end-line="1704" selection-end-column="15" />
+          <folding>
+            <element signature="e#9833#9950#0" />
+            <element signature="e#9975#10092#0" />
+            <element signature="e#11622#12737#0" />
+            <element signature="e#12767#13097#0" />
+            <element signature="e#16506#17260#0" />
+            <element signature="e#17296#17678#0" />
+            <element signature="e#17719#17912#0" />
+            <element signature="e#17945#17999#0" />
+            <element signature="e#18029#18111#0" />
+            <element signature="e#18147#18363#0" />
+            <element signature="e#18397#19107#0" />
+            <element signature="e#19137#19333#0" />
+            <element signature="e#22297#23864#0" />
+            <element signature="e#23894#25082#0" />
+            <element signature="e#25110#25191#0" />
+            <element signature="e#25497#26371#0" />
+            <element signature="e#26407#27213#0" />
+            <element signature="e#27244#27659#0" />
+            <element signature="e#27688#28276#0" />
+            <element signature="e#28304#28901#0" />
+            <element signature="e#28929#30155#0" />
+            <element signature="e#30179#30258#0" />
+            <element signature="e#30285#31019#0" />
+            <element signature="e#31046#31624#0" />
+            <element signature="e#31661#32426#0" />
+            <element signature="e#32453#33499#0" />
+            <element signature="e#33529#33614#0" />
+            <element signature="e#33651#33868#0" />
+            <element signature="e#33899#34074#0" />
+            <element signature="e#34105#34266#0" />
+            <element signature="e#34298#34489#0" />
+            <element signature="e#34522#35244#0" />
+            <element signature="e#35272#35346#0" />
+            <element signature="e#35378#35450#0" />
+            <element signature="e#35481#35519#0" />
+            <element signature="e#35548#35584#0" />
+            <element signature="e#35615#35653#0" />
+            <element signature="e#35685#35752#0" />
+            <element signature="e#35788#35824#0" />
+            <element signature="e#35853#35943#0" />
+            <element signature="e#35970#36127#0" />
+            <element signature="e#36163#36209#0" />
+            <element signature="e#36242#36355#0" />
+            <element signature="e#36386#37162#0" />
+            <element signature="e#37197#37951#0" />
+            <element signature="e#37990#38430#0" />
+            <element signature="e#38460#38734#0" />
+            <element signature="e#51984#52083#0" />
+            <element signature="e#52124#52477#0" />
+            <element signature="e#52508#53135#0" />
+            <element signature="e#59974#60071#0" />
+            <element signature="e#60103#60218#0" />
+            <element signature="e#60248#60299#0" />
+            <element signature="e#60321#60503#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

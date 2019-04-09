@@ -39,6 +39,16 @@
                 </view>
             </view>
         </view>
+        <view class='child' style='height:120rpx;line-height:120rpx;display:inline-block;margin:20rpx 0rpx;'>
+            <view class='flex' style='padding-bottom:20rpx;'>
+                <view class='flex100-2'>微信二维码</view>
+                <view bindtap='upwx' class='flex100-8 tr'><i
+                        class='iconfont icon-right2 fr'></i>
+                    <image class='circle fr mr-10' mode='aspectFill'
+                           src='{{(wxqrcode?wxqrcode:globalData.defaultUserImg)}}'></image>
+                </view>
+            </view>
+        </view>
         <view class='child'>
             <view class='flex'>
                 <view class='flex100-2'>姓名</view>
@@ -118,6 +128,15 @@
             </view>
         </view>
         <view class='child' style='min-height:38rpx;height:auto;line-height:38rpx;padding:26rpx 4%;'>
+            <view class='flex' style="width: 90%;">
+                <view class='flex100-2'>公司地址</view>
+                <view class='flex100-8 tr'><input bindinput='bindInputcomaddre' name='comaddre' placeholder='公司地址' type='text'
+                                                  value='{{staffInfo.comaddre}}'></input>
+                </view>
+                <text style="padding: 2px 5px;background-color: #37a2da;color: white;margin-left: 15px;margin-right: 15px;" bindtap="choose_location">定位</text>
+            </view>
+        </view>
+        <view class='child' style='min-height:38rpx;height:auto;line-height:38rpx;padding:26rpx 4%;'>
             <view class='flex'>
                 <view class='flex100-2'>公司二</view>
                 <view class='flex100-8 tr'><input bindinput='bindInputCompany' name='company2' placeholder='公司二' type='text'
@@ -143,6 +162,9 @@
         </view>
     </view>
     <view class='staff-editInfo-common'>
+        <view class='title'>公司简介</view>
+        <textarea class='br-15' decode='emsp' maxlength='-1' name='comdesc' placeholder='公司简介'
+                  value='{{staffInfo.comdesc}}'></textarea>
         <view class='title'>个性签名</view>
         <textarea class='br-15' decode='emsp' maxlength='-1' name='desc' placeholder='个性签名'
                   value='{{staffInfo.desc2}}'></textarea>

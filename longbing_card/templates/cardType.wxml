@@ -41,16 +41,12 @@
                 <!--{{(cardIndexData.info.myCompany.short_name?cardIndexData.info.myCompany.short_name:"公司简称")}}-->
                 {{(cardIndexData.info.company?cardIndexData.info.company:"公司简称")}}
             </view>
-            <view class='contact-info ellipsis'>
-                <em class='abs tc circle'>
-                    <i class='iconfont icon-dizhi'></i>
-                </em>
-                <!--{{(cardIndexData.info.myCompany.addr?cardIndexData.info.myCompany.addr:"公司地址")}}-->
+            <view class='company-name1 ellipsis'>
                 {{(cardIndexData.info.company?cardIndexData.info.company2:"公司地址")}}
             </view>
             <view class='user-name ellipsis'>{{(cardIndexData.info.name?cardIndexData.info.name:"姓名")}}</view>
             <!--<view class='job-name ellipsis'>{{(cardIndexData.info.job_name?cardIndexData.info.job_name:"职称")}}</view>-->
-            <view class='job-name ellipsis'>{{(cardIndexData.info.job?cardIndexData.info.job:"职称")}}</view>
+            <view class='job-name ellipsis' style="margin-bottom: 25rpx;!important;">{{(cardIndexData.info.job?cardIndexData.info.job:"职称")}}</view>
             <view class='contact-info ellipsis'>
                 <em class='abs tc circle'>
                     <i class='iconfont icon-shouji1'></i>
@@ -63,7 +59,13 @@
                 </em>
                 {{(cardIndexData.info.email?cardIndexData.info.email:"邮箱")}}
             </view>
-
+            <view class='contact-info ellipsis'>
+                <em class='abs tc circle'>
+                    <i class='iconfont icon-dizhi'></i>
+                </em>
+                <!--{{(cardIndexData.info.myCompany.addr?cardIndexData.info.myCompany.addr:"公司地址")}}-->
+                {{(cardIndexData.info.comaddre?cardIndexData.info.comaddre:"公司地址")}}
+            </view>
         </view>
     </view>
 </view>
