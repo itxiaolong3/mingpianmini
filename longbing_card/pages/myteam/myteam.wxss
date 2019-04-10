@@ -80,5 +80,5 @@
 }
 .mid1 text,.mid2 text,.mid3 text{
  margin: 5px auto;
- font-size: 15px;
+ font-size: 12px;
 }

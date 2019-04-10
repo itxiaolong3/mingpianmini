@@ -35,7 +35,7 @@ Page({
   data: (_data = {
     toshowBG: !1,
     isToShowCard: !1,
-    changeCardText: "交换手机号码",
+    changeCardText: "交换手机号",
     color: "23,162,52",
     voucherStatus: {
       show: !0,
@@ -182,11 +182,12 @@ Page({
           console.log(d.data.ispasstime,'是否过期')
           if (d.data.ispasstime){
               wx.showModal({
-                  title: '到期提示',
-                  content: '已过期，请升级会员',
+                  title: '注册提示',
+                  content: '会员申请',
                   showCancel:true,
                   success(res) {
                       if (res.confirm) {
+                        wx.setStorageSync('ispass',1)
                           // wx.redirectTo({
                           //     url: '/longbing_card/pages/mypage/vippay'
                           // })
@@ -194,6 +195,7 @@ Page({
                               url: '/longbing_card/pages/mypage/vippay'
                           })
                       } else if (res.cancel) {
+                        wx.setStorageSync('ispass',1)
                           console.log('用户点击取消');
                       }
                   }
@@ -1017,7 +1019,8 @@ Page({
           var a = wx.getStorageSync("userid"),
             t = wx.getStorageSync("user"),
             pid = wx.getStorageSync("pid");
-          t.phone = e.data.phone, wx.setStorageSync("userid", a),wx.setStorageSync("pid", pid), wx.setStorageSync("user", t)
+            ispass = wx.getStorageSync("ispass");
+          t.phone = e.data.phone, wx.setStorageSync("userid", a),wx.setStorageSync("pid", pid),wx.setStorageSync("ispass", ispass), wx.setStorageSync("user", t)
         }
       })
     })
@@ -1070,7 +1073,7 @@ Page({
       var e = a.detail.encryptedData,
         o = a.detail.iv;
       t.setData({
-        changeCardText: "存入手机通讯录"
+        changeCardText: "存入通讯录"
       }, function() {
         t.toSavePhoneNumber(1), t.setPhoneInfo(e, o), t.setData({
           isToShowCard: !1
@@ -1212,8 +1215,9 @@ Page({
         _ = wx.getStorageSync("user"),
         m = wx.getStorageSync("isShowCard"),
           pid=wx.getStorageSync("pid"),
+          ispass=wx.getStorageSync("ispass"),
         x = wx.getStorageSync("isShowMessage");
-      wx.clearStorageSync(), wx.setStorageSync("userid", f),wx.setStorageSync("pid", pid), wx.setStorageSync("user", _), wx.setStorageSync("isShowCard", m), wx.setStorageSync("isShowMessage", x);
+      wx.clearStorageSync(), wx.setStorageSync("userid", f),wx.setStorageSync("pid", pid),wx.setStorageSync("ispass", ispass), wx.setStorageSync("user", _), wx.setStorageSync("isShowCard", m), wx.setStorageSync("isShowMessage", x);
       var b = e.data.collectionList.list,
         w = b[t].userInfo.fans_id,
         S = wx.getStorageSync("userid"),
@@ -1691,9 +1695,13 @@ Page({
           isSetting: !0
         })
       }
-    })) : "toShowShare" == o ? n.setData({
+    })) : "toShowShare" == o ?(wx.getStorageSync('ispass')? wx.showToast({
+      icon: "none",
+      title: '已过期，无法分享',
+      duration: 2e3
+    }):n.setData({
       showShareStatus: 1
-    }) : "toAddPhone" == o ? n.toSavePhoneNumber(r) : "toShareCard" == o ? (2 == r && wx.navigateTo({
+    })) : "toAddPhone" == o ? n.toSavePhoneNumber(r) : "toShareCard" == o ? (2 == r && wx.navigateTo({
       url: "/longbing_card/users/pages/card/share/share"
     }), n.setData({
       showShareStatus: 0

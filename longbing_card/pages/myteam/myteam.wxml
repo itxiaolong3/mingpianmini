@@ -26,7 +26,7 @@
   <view class='mid'>
     <view class='mid1' bindtap='teamcount'>
       <image src='../../resource/icon/myteam.png'></image>
-      <text>团队统计</text>
+      <text>团队统计(本月:{{userinfos['allcount']}}人)</text>
     </view>
     <view class='mid2' bindtap='viporder'>
     <image src='../../resource/icon/myorder.png'></image>

@@ -95,7 +95,7 @@ wx-ec-canvas { width: 100%; height: 100%; }
 .card-index-sec-2 .user-info-sec .company-name1{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:5rpx 0rpx 23rpx 70rpx; }
 .card-index-sec-2 .user-info-sec .user-name{ font-size: 34rpx; color: #323232; }
 .card-index-sec-2 .user-info-sec .job-name{ font-size: 20rpx; color: #323232; margin-bottom: 65rpx; }
-.card-index-sec-2 .user-info-sec .contact-info{ line-height: 36rpx; font-size: 22rpx; color: #444444; margin:1rpx 0rpx 0rpx 6rpx; }
+.card-index-sec-2 .user-info-sec .contact-info{ line-height: 36rpx; font-size: 22rpx; color: #444444; margin:1rpx 0rpx 0rpx 50rpx; }
 .card-index-sec-2 .user-info-sec .contact-info wx-em{ width: 34rpx; height: 34rpx; line-height: 34rpx; background: #eaeaea; left: 30rpx; }
 .card-index-sec-2 .user-info-sec .contact-info wx-em wx-i{ color: #969696; font-size: 20rpx; }
 .card-index-sec-2 .card-bg-2{ width:100%; height: 401rpx; top: 0rpx; left: 0rpx; z-index:0; }

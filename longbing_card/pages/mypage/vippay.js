@@ -58,6 +58,7 @@ Page({
                   icon: 'success',
                   duration: 2000
                 })
+                wx.setStorageSync('ispass',0)
                 setTimeout(function () {
                   wx.redirectTo({
                     url: '/longbing_card/pages/index/index'
@@ -99,6 +100,7 @@ Page({
                 icon: 'success',
                 duration: 2000
               })
+              wx.setStorageSync('ispass',0)
               setTimeout(function () {
                 wx.redirectTo({
                   url: '/longbing_card/pages/index/index'

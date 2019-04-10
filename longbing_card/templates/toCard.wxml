@@ -96,7 +96,7 @@
                             class='tc fr br-3'>导航</em></button>
                 </view>
                 <view class='child flex address'>
-                    <view class='flex100-15'>微信二维码</view>
+                    <view class='flex100-15'>二维码</view>
                     <view class='flex100-7'><image src='{{cardIndexData.info.wxqrcode}}' bindtap='proimg' data-src="{{cardIndexData.info.wxqrcode}}" style='width:60px;height:60px;'></image></view>
                 </view>
             </form>

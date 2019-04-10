@@ -9,13 +9,13 @@
     <radio-group class="radio-group" bindchange="radioChange">
     <view class="wxpaytype">
      <label class="radio">
-        微信支付
+        <label style='font-size:13px;'>微信支付(七天试用)</label>
         <radio value="1" checked="{{iswxpay}}" />
       </label>
       </view>
      <view class='yqcode'>
       <label class="radio">
-        邀请码抵扣
+       邀请码兑换
         <radio value="2" checked="{{iswxpay}}" />
       </label>
      </view>
