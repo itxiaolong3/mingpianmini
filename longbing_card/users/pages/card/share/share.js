@@ -11,6 +11,10 @@ Page({
     imagePath: "", data: {template: {}}, onLoad: function (e) {
         app.util.showLoading(4);
         var t = getCurrentPages(), r = t[t.length - 2].__data__;
+        if (!r){
+            console.log('为空')
+            r=t[t.length - 2].data;
+        }
         console.log("prevPage", t);
         var a = app.globalData.to_uid, o = (app.globalData.isIphoneX, r.cardIndexData.info), i = o.job,
             n = o.myCompany.name;
@@ -98,12 +102,27 @@ Page({
                     align: "left",
                     width: "600rpx"
                 }
-            }, {
+            },
+              {
                 type: "text",
-                text: r.cardIndexData.info.myCompany.addrMore,
+                text: r.cardIndexData.info.company,
+                css: {
+                  fontSize: "26rpx",
+                  top: "340rpx",
+                  left: "80rpx",
+                  color: "#969696",
+                  textDecoration: "none",
+                  align: "left",
+                  width: "580rpx"
+                }
+              }, 
+               {
+                type: "text",
+                //text: r.cardIndexData.info.myCompany.addrMore,
+                text: r.cardIndexData.info.comaddre,
                 css: {
                     fontSize: "26rpx",
-                    top: "340rpx",
+                    top: "380rpx",
                     left: "80rpx",
                     color: "#969696",
                     textDecoration: "none",

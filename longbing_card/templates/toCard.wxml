@@ -91,7 +91,7 @@
                     <view class='flex100-15'>地址</view>
                     <!--<view class='flex100-7'>{{cardIndexData.info.myCompany.addr}}</view>-->
                     <view class='flex100-7'>{{cardIndexData.info.comaddre}}</view>
-                    <button class='flex100-15 tr' data-content='{{cardIndexData.info.myCompany.addr}}'
+                    <button class='flex100-15 tr' data-content='{{cardIndexData.info.comaddre}}'
                             data-status='toMap' data-type='7' formType='submit' hoverClass='none'><em
                             class='tc fr br-3'>导航</em></button>
                 </view>
@@ -111,13 +111,14 @@
                         存入通讯录
                     </button>
                 </block>
+                <block wx:if='{{globalData.hasClientPhone == false}}'>
+                    <button bindgetphonenumber='getChangeCard' class='fr tc' hoverClass='btn-hover' lang='zh_CN'
+                            openType='getPhoneNumber'>{{changeCardText}}
+                    </button>
+                </block>
             </view>
 
-            <block wx:if='{{globalData.hasClientPhone == false}}'>
-                <button bindgetphonenumber='getChangeCard' class='fr tc' hoverClass='btn-hover' lang='zh_CN'
-                        openType='getPhoneNumber'>{{changeCardText}}
-                </button>
-            </block>
+
         </form>
         <block wx:if='{{globalData.configInfo.config.card_type == 2}}'>
             <form bindsubmit='formSubmit' class='staff-card-info-sec' reportSubmit='true'>
@@ -418,7 +419,7 @@
             <block wx:if='{{globalData.hasClientPhone == true}}'>
                 <form bindsubmit='formSubmit' reportSubmit='true'>
                     <button class='btn tc' data-status='toAddPhone' data-type='1' formType='submit'
-                            hoverClass='btn-hover'>存入手机通讯录
+                            hoverClass='btn-hover'>存入通讯录
                     </button>
                 </form>
             </block>

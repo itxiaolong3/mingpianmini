@@ -73,5 +73,9 @@ exports.default = {
   Readuserbook(param) {
     return _xx_request.req.post("Readuserbook", param)
   },
+  //过期提示3天以后再提示
+   Addpasstime(param) {
+    return _xx_request.req.post("Addpasstime", param)
+  },
     //我的接口结束
 };

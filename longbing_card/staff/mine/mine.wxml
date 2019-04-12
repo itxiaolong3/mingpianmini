@@ -98,15 +98,15 @@
             <view class='text-3 tr rel'><i class='iconfont icon-right2 rel'></i></view>
         </button>
     </block>
-    <button class='child' formType='submit' hoverClass='none' style='height:104rpx;'>
-        <view class='text-7 tl'><em class='circle tc' style='background:#21bf34;'><i
-                class='iconfont icon-xiaoxi'></i></em>
-            <text>剩余服务通知数量</text>
-        </view>
-        <view class='text-3 tr rel'>
-            <block wx:if='{{noticeNum}}'><em class='dotbig' style='top:10rpx;right:35rpx;'>{{noticeNum}}</em></block>
-            <i class='iconfont icon-right2 rel'></i></view>
-    </button>
+    <!--<button class='child' formType='submit' hoverClass='none' style='height:104rpx;'>-->
+        <!--<view class='text-7 tl'><em class='circle tc' style='background:#21bf34;'><i-->
+                <!--class='iconfont icon-xiaoxi'></i></em>-->
+            <!--<text>剩余服务通知数量</text>-->
+        <!--</view>-->
+        <!--<view class='text-3 tr rel'>-->
+            <!--<block wx:if='{{noticeNum}}'><em class='dotbig' style='top:10rpx;right:35rpx;'>{{noticeNum}}</em></block>-->
+            <!--<i class='iconfont icon-right2 rel'></i></view>-->
+    <!--</button>-->
 </form>
 <view class='staff-mine-list hide'>
     <view bindtap='toJump' class='child' data-status='toCourse'>

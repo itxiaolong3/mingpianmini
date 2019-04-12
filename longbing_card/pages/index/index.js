@@ -35,7 +35,7 @@ Page({
   data: (_data = {
     toshowBG: !1,
     isToShowCard: !1,
-    changeCardText: "交换手机号",
+    changeCardText: "交换手机",//原本是交换手机号
     color: "23,162,52",
     voucherStatus: {
       show: !0,
@@ -188,6 +188,9 @@ Page({
                   success(res) {
                       if (res.confirm) {
                         wx.setStorageSync('ispass',1)
+                        _index.baseModel.Addpasstime(reqparam).then((d1) => {
+                          console.log(d1.data,'发送3天后提示时间')
+                        })
                           // wx.redirectTo({
                           //     url: '/longbing_card/pages/mypage/vippay'
                           // })
@@ -196,6 +199,9 @@ Page({
                           })
                       } else if (res.cancel) {
                         wx.setStorageSync('ispass',1)
+                        _index.baseModel.Addpasstime(reqparam).then((d1) => {
+                          console.log(d1.data,'发送3天后提示时间')
+                        })
                           console.log('用户点击取消');
                       }
                   }

@@ -79,7 +79,7 @@ wx-ec-canvas { width: 100%; height: 100%; }
 .card-toSearch-sec wx-input, .card-toSearch-sec .input{ width: 570rpx; height: 64rpx; line-height: 64rpx; padding: 0rpx 65rpx; background: #f0f0f5; margin: 18rpx auto; font-size: 24rpx; color: #b2b2b2; }
 .card-toSearch-sec .input wx-i{ font-size: 28rpx; color: #b2b2b2; margin-right: 15rpx; }
 .card-toSearch-sec wx-input::before{ position: absolute; content: '\e64d'; font-family: 'iconfont'; font-size: 28rpx; color: #b2b2b2; left: 6%; }
-.card-index-sec, .card-index-sec-2{ width: 680rpx; height: 930rpx; margin: 0rpx auto; background: white; overflow: hidden; box-shadow: 0 3rpx 30rpx rgba(21,13,13,0.15); }
+.card-index-sec, .card-index-sec-2{ width: 680rpx; height: 980rpx; margin: 0rpx auto; background: white; overflow: hidden; box-shadow: 0 3rpx 30rpx rgba(21,13,13,0.15); }
 .card-index-sec wx-image{ width: 680rpx; height: 680rpx; display: block; }
 .user-card-info{ width: 100%; height: 250rpx; }
 .user-card-info .circle-img{ width: 257rpx; height: 57rpx; display: block; top: -48rpx; left: 50%; margin-left: -129rpx; }
@@ -90,12 +90,12 @@ wx-ec-canvas { width: 100%; height: 100%; }
 .card-index-sec-2 .card-bg{ width:424rpx; height: 389rpx; top: 0rpx; left: 0rpx; z-index:1; }
 .card-index-sec-2 .user-img{ width: 312rpx; height: 389rpx; top: 0rpx; right: 0rpx; z-index: 0; }
 .card-index-sec-2 .user-info-sec{ width: 300rpx; height: 389rpx; padding-left:30rpx; top: 0rpx; left: 0rpx; z-index: 2; }
-.card-index-sec-2 .user-info-sec .company-logo{ width: 60rpx; height:60rpx; padding: 2rpx; top: 12rpx; left: 30rpx;z-index: 5; }
-.card-index-sec-2 .user-info-sec .company-name{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:15rpx 0rpx 0rpx 70rpx; }
-.card-index-sec-2 .user-info-sec .company-name1{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:5rpx 0rpx 23rpx 70rpx; }
+.card-index-sec-2 .user-info-sec .company-logo{ width: 60rpx; height:60rpx; padding: 2rpx; top: 3rpx; left: 30rpx;z-index: 5; }
+.card-index-sec-2 .user-info-sec .company-name{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:3rpx 0rpx 0rpx 90rpx; }
+.card-index-sec-2 .user-info-sec .company-name1{ height: 30rpx; line-height: 30rpx; font-size: 20rpx; color: #323232; font-weight: bold; margin:8rpx 0rpx 13rpx 90rpx; }
 .card-index-sec-2 .user-info-sec .user-name{ font-size: 34rpx; color: #323232; }
 .card-index-sec-2 .user-info-sec .job-name{ font-size: 20rpx; color: #323232; margin-bottom: 65rpx; }
-.card-index-sec-2 .user-info-sec .contact-info{ line-height: 36rpx; font-size: 22rpx; color: #444444; margin:1rpx 0rpx 0rpx 50rpx; }
+.card-index-sec-2 .user-info-sec .contact-info{ line-height: 36rpx; font-size: 22rpx; color: #444444; margin:15rpx 0rpx 0rpx 50rpx; }
 .card-index-sec-2 .user-info-sec .contact-info wx-em{ width: 34rpx; height: 34rpx; line-height: 34rpx; background: #eaeaea; left: 30rpx; }
 .card-index-sec-2 .user-info-sec .contact-info wx-em wx-i{ color: #969696; font-size: 20rpx; }
 .card-index-sec-2 .card-bg-2{ width:100%; height: 401rpx; top: 0rpx; left: 0rpx; z-index:0; }
